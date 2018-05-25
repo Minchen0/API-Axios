@@ -1,0 +1,167 @@
+/* Typsy specific colours */
+
+
+
+.bg-typsy-teal {
+    background-color: #94E0DC; /* RGB: 148,224,220 */
+}
+
+.bg-typsy-red {
+    background-color: #FF0055; /* RGB: 255,0,85 */
+}
+
+.bg-typsy-blue {
+    background-color: #3848BF; /* RGB: 56,72,191 */
+}
+
+.bg-typsy-grey1 {
+    background-color: #999999; /* RGB: 153,153,153*/
+}
+
+.bg-typsy-grey2 {
+    background-color: #E8E8E8; /* RGB: 232,232,232 */
+}
+
+.bg-typsy-grey3 {
+    background-color: #F0F0F0; /* RGB: 240,240,240 */
+}
+
+/* TODO: Rename to btn-typsy-red and btn-typsy-blue */
+.btn-outline-light{
+    background-color: transparent;
+    color: inherit;
+    transition: all .5s;
+}
+
+
+
+.btn-typsy {
+    color: #fff;
+    background-color: #FF0055;
+    border-color: #FF0055;
+}
+
+    .btn-typsy:hover {
+        color: whitesmoke;
+    }
+
+.btn-typsy-blue {
+    color: #fff;
+    background-color: #3848BF;
+    border-color: rgba(56, 72, 191, 0.87);
+}
+
+    .btn-typsy-blue:hover {
+        color: whitesmoke;
+        background-color: rgba(56, 72, 191, 0.87);
+    }
+
+.btn-typsy-red {
+    color: #fff;
+    background-color: #FF0055;
+    border-color: #FF0055;
+}
+
+    .btn-typsy-red:hover {
+        color: whitesmoke;
+        background-color: rgba(255, 0, 85, 0.87);
+    }
+
+.btn-typsy-teal {
+    color: #fff;
+    background-color: #94E0DC;
+    border-color: #94E0DC;
+}
+
+    .btn-typsy-teal:hover {
+        color: whitesmoke;
+        background-color: rgba(148, 224, 220, 0.87);
+    }
+
+/* Alerts */
+.alert-typsy-teal {
+    color: #3848BF;
+    background-color: #94E0DC;
+    border-color: #b8daff;
+}
+
+    .alert-typsy-teal a {
+        color: #3848BF;
+    }
+
+.typsy-red {
+    color: #FF0055;
+}
+
+.typsy-blue {
+    color: #3848BF;
+}
+
+.typsy-teal {
+    color: #94E0DC;
+}
+
+.typsy-grey1 {
+    color: #999999; /* RGB: 153,153,153*/
+}
+
+.typsy-grey2 {
+    color: #E8E8E8; /* RGB: 232,232,232 */
+}
+
+.typsy-grey3 {
+    color: #F0F0F0; /* RGB: 240,240,240 */
+}
+
+/* Icon Styles */
+
+.instructor-icon {
+    width: 19px;
+    height: 19px;
+    margin-right: 12px;
+    margin-left: 2px;
+}
+
+.duration-icon {
+    width: 19px;
+    height: 19px;
+    margin-right: 12px;
+    margin-left: 2px;
+}
+
+.skill-credit-icon {
+    width: 19px;
+    height: 19px;
+    margin-right: 12px;
+    margin-left: 2px;
+}
+
+.rating-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+    .rating-icon:hover {
+        fill: #FF0055;
+    }
+
+.modal-rating-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+/* For Tabs - set the border color to Typsy-Red */
+.nav-tabs {
+    border-bottom: 1px solid #FF0055;
+}
+
+    .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+        border-color: #FF0055 #FF0055 #ffffff;
+    }
+
+    .nav-tabs .nav-link:not(.active):hover {
+        border-bottom: 1px solid #FF0055;
+    }
+

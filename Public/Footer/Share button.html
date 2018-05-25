@@ -1,0 +1,352 @@
+<html>
+
+<head>
+  <title>Your Website Title</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <style>
+    .content-info {
+      background: #f05;
+      padding: 78px 0 52px;
+    }
+
+    .content-info>*,
+    .content-info a {
+      color: #fff;
+    }
+
+    .footer-container {
+      margin-right: auto;
+      margin-left: auto;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    .ft-nav-heading {
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 26px;
+    }
+
+    .ft-nav {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    .ft-btm-links,
+    .social__social___2CweB {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .ft-btm-links li,
+    .social__social___2CweB li {
+      display: inline-block;
+    }
+
+    .content-info .play-store {
+      background: url(data:image/png;base64,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) no-repeat 0 0;
+    }
+
+    .content-info .ios-store {
+      background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAAAqCAMAAABrySKZAAAA/1BMVEUAAACgoKCmpqampqampqalpaWmpqampqampqYAAAD///+cnJyRkZEPDw+mpqYwMDANDQ0ICAhQUFAFBQUCAgLw8PDQ0NDAwMAsLCw3NzcVFRX9/f3h4eGgoKDHx8exsbEkJCTq6upwcHBgYGDm5uaurq6AgIA+Pj4gICD6+vplZWUcHBwZGRnW1tajo6NCQkIzMzPu7u7e3t64uLiVlZVGRkb29vb09PTT09O9vb1JSUk7OzvNzc2Dg4NUVFQeHh7b29vCwsKpqamampqKioppaWlXV1coKCj4+PiNjY2Hh4d3d3cRERHy8vLY2Nh+fn5NTU3j4+PExMRtbW3Jycnp9G2JAAAACXRSTlMA+lfIj/3LwU0GypN5AAAFHklEQVRYw+2Y2XLaMBSG073/D65tbMA2O4Ww72uAJGQlabYm7fs/SyU7QIMzJE06HS76XTAMkq1PRzqS0NbW1tt3b4IbwZtPn7cE72/S2BBm396L+NyY2Bj047dbHzcmPhL13dYbbBL6h60ANoova4X2y8qf9K6CVYoGHsfYf4GQFohx9blQMnK3reFRQnGsQvVRGxNq+M+FtAkZXs3AbHK/cHfwOiEtrLxIKEiyi1WhKFCljXI80zXsodmImI0DHAVy7bErtJvLXQCp62kB+mF4xxMaXWdSCo4SspKgw3hPHeTDXVFSu/32XKHLEplxHhNCZm9WspRcWb+ygi37OIjDpJLIS6FQxkmXbDh6MIXs9eXIFdKv9ozkOVJJTVQSKBQRot3kvt6ylNbsmUIjsm3hMSGtVDi9Bg6DyJ9Mt3cnBSR2UY5Kod0UMCzr9dokikTwfshUmrjpICUrLYSugIFqxeLx1uiZQr38iY7HhIzu1CgMFAyz+JrcsSY5E4ltfHWFTmqmFh6NMsaPKI53MHOFnJiFwwBSspInVHXnUFh1YsVnzCG7Hg8Pv1kwG4EcS5ML7YFQOJqJpmHma3cRRTR1gnYASyEtkqylzPQgdR1BOhOJtFQIjm87t+mlENo11RPCcSZ1Z64XMoP0aLfoEbewRJupl5BYTfmiig5HCDsKtKq7DhlNWduxNfFdG2sVA5K0rc8rSZSmLtehfVFYaTpPROiIPqYG/hV+oR59ZFT8M/xCB1wlNsY/wy+k0MchXohTNV4v1KCPPaxwGg4f4Cm0YIuMRdTXCp3SRxMrpEimsR59SLZrA1bkjl9+hdBX+mis9r1fSvIC6/nBvg2YBbeP4VcI+ZPM1/Yp7y6YXG559jJaFbs6fy07iz4uhBzbMhbdaury07a19UJp+pjqeECeNyq9c1KO40SMjFhAkf2izNDUJSTdxb4coSQLWFGSV7umVEydhqnCOO+TZ0/s9hn6CD6cHX02EWcWgjjbsU7qjJkq9sn2VT5KJt0g2DHmym5PzicspVLfYYU53K3H+AXY43DAMxUfWPtx0eLNWqFD+qkrWLLHtmjFG7M2S2PAPhPOChmvAifkKSTlMzKXNZZDFuVPwy1vIETW0jKjM5dyklzp64RCfIT8A+Nz4cBYVQ6HV5LgVAh5QZsyAZdZXSgltblQhQwBMHM8QsjLlAC7iqDPwjohI861S5E+YC0ajZI/XKFdCLIsSaGGN8OiuMfpkt25UI8seqfFHSkkY57kPaF1QijTx9DEgu+858AV2obghP2FUF00uKDO+FxoRFY8oY4UgmDCnwkXa62QOeEKy5AuGyy7YxbhkXdAqEmhrxAMxU8LssxIoQEAi+xBcMvuXCjP7rMO+VafD3jwmBH2pooT44kUalWA9IDfoHj5tUd+h6ApdKH9ZEfE1ItNjTtuxrMwFypzYD0t5N8+kvrDg3YRkgPuSCHmzoMt5hwpxIhMa2/E8qWDxGGOZ02gEuO0bqMhisrnJdYxFzKS7NdvjjsXTwnha5/MBPd62STJziV+I8DIfG+IOUIocU1yOIMU2m6RzCuQHJUomIwh+OalxfdbkqVjwxVa/BEVBJ8UghOyDUiKo5WgVosOXPRiUZeT2hyHmiZcoYLW+77YRrRxqFeERzpUkFE27VBDu38WHsq411T8Q/YyllmGeyG8jP9Cfyr0Bi9mplZxj6mq2t+5sNq8K7232xt26bn1fntjYmSJa2Hv4jywEbgX578AMHBIXTFhRLsAAAAASUVORK5CYII=) 0 0 no-repeat;
+    }
+
+    .content-info .ios-store,
+    .content-info .play-store {
+      display: block;
+      margin-bottom: 5px;
+      text-indent: -9999px;
+      height: 42px;
+    }
+
+    .social__social___2CweB .social__icon___2V45V {
+      display: inline-block;
+      vertical-align: middle;
+      width: 20px;
+      height: 20px;
+    }
+
+    .social__social___2CweB a {
+      padding: 0 10px;
+      color: #fff;
+      display: block;
+    }
+
+    .social__social___2CweB ul {
+      margin: 0 0;
+      padding: 0 0;
+    }
+
+    @media (max-width: 767px) {
+      .ft-copy .col-md-3 {
+        order: 1;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .ft-copy .col-md-7 {
+        order: 2;
+        margin-bottom: 20px;
+      }
+      .ft-copy .col-md-2 {
+        order: 3;
+      }
+
+      .ft-brand {
+        background: transparent url("typsy1.svg") 0 -8px no-repeat;
+        display: block;
+        text-indent: -9999px;
+        height: 50px;
+        margin-bottom: 10px;
+        background-position: center;
+      }
+
+      .ft-menu-toggle {
+        display: block;
+        background-color: transparent;
+        border: none;
+        text-align: center;
+        margin: -52px auto 60px;
+        color: #fff;
+        font-weight: 700;
+      }
+
+      .content-info .play-store {
+        background: url(data:image/png;base64,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) no-repeat 0 0;
+        background-position: center;
+      }
+
+      .content-info .ios-store {
+        background: transparent url(data:image/png;base64,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) 0 0 no-repeat;
+        background-position: center;
+      }
+      .ft-links.menu-collapsed {
+        text-align: center;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .ft-brand {
+        background: transparent url("typsy1.svg") 0 -8px no-repeat;
+        display: block;
+        text-indent: -9999px;
+        height: 50px;
+        margin-top: -12px;
+      }
+      .ft-copy {
+        border-top: 1px solid #fff;
+        padding-top: 39px;
+        margin-top: 78px;
+      }
+
+      .ft-menu-toggle {
+        display: none;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .footer-container {
+        width: 990px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .footer-container {
+        width: 990px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <footer class="content-info">
+    <div class="footer-container">
+      <!-- <button class="ft-menu-toggle" type="button" data-toggle="collapse" data-target="#togglemenu" aria-expanded="false" aria-controls="togglemenu">MENU
+        <svg fill="white" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 14 14" class="nav__chevron___13gWw"
+          style="vertical-align: middle;">
+          <g>
+            <polygon class="cls-1" points="13.79 4.17 12.66 3.04 7 8.7 1.34 3.04 0.21 4.17 5.87 9.83 5.87 9.83 7 10.96 8.13 9.83 8.13 9.83 13.79 4.17"></polygon>
+          </g>
+        </svg>
+      </button> -->
+      <div class="ft-links menu-collapsed" id="togglemenu">
+        <div class="row">
+          <div class="col-xs-4 col-md-3">
+            <h3 class="ft-nav-heading">Welcome</h3>
+            <ul class="ft-nav">
+              <li>
+                <a href="/individuals/">Individuals</a>
+              </li>
+              <li>
+                <a href="/business/">Single Venue</a>
+              </li>
+              <li>
+                <a href="/business/multi-venue">Multi Venue</a>
+              </li>
+              <li>
+                <a href="/business/corporate">Corporate</a>
+              </li>
+              <li>
+                <a href="/academics/">Academic</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xs-4 col-md-3">
+            <h3 class="ft-nav-heading">Learning</h3>
+            <ul class="ft-nav">
+              <li>
+                <a href="/discover/?type=lessons">Lessons</a>
+              </li>
+              <li>
+                <a href="/discover/?type=courses">Courses</a>
+              </li>
+              <li>
+                <a href="/discover/?category=mentor sessions">Mentor Sessions</a>
+              </li>
+              <li>
+                <a href="/instructors/">Instructors</a>
+              </li>
+              <li>
+                <a href="/custom-content/">Custom Content</a>
+              </li>
+              <li>
+                <a href="/integrations/">Integrations</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xs-4 col-md-3">
+            <h3 class="ft-nav-heading">Typsy</h3>
+            <ul class="ft-nav">
+              <li>
+                <a href="/contact-us/">Contact Us</a>
+              </li>
+              <li>
+                <a href="/ambassadors/">Ambassadors</a>
+              </li>
+              <li>
+                <a href="/partners/">Partnerships</a>
+              </li>
+              <li>
+                <a href="http://blog.typsy.com">Blog</a>
+              </li>
+              <li>
+                <a href="http://info.typsy.com/typsy-newsletters">Newsletter</a>
+              </li>
+              <li>
+                <a href="/events/">Events</a>
+              </li>
+              <li id="refer-a-friend-footer">
+                <a href="#" data-mbsy-integration="3525">Refer a Friend</a>
+              </li>
+              <li>
+                <a href="/competition/">Competition</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-3 col-md-3">
+            <h3 class="ft-nav-heading">Download the app</h3>
+            <a class="play-store" href="https://play.google.com/store/apps/details?id=com.typsy.app">Download on Google play store</a>
+            <a class="ios-store" href="https://itunes.apple.com/us/app/typsy/id1094052825?mt=8">iOS Store</a>
+          </div>
+        </div>
+      </div>
+      <div class="ft-copy">
+        <div class="row">
+          <div class="col-sm-2 col-md-2">
+            <a class="ft-brand" href="/">Typsy</a>
+          </div>
+          <div class="col-sm-6 col-md-7 text-center">
+            <ul class="ft-btm-links">
+              <li>
+                <a href="/privacy-policy/">Privacy</a>
+              </li>
+              <li>
+                <a href="/terms-and-conditions/">Terms</a>
+              </li>
+              <li>
+                Copyright Typsy&nbsp;2018. &nbsp; All rights reserved
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-4 col-md-3 text-lg-right">
+            <div class="social__social___2CweB">
+              <ul>
+                <li>
+                  <a href="http://www.twitter.com/asktypsy" target="_blank">
+                    <svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 20 20" class="social__icon___2V45V"
+                      style="vertical-align: middle;">
+                      <g>
+                        <title>twitter</title>
+                        <path class="cls-1" d="M20,3.73a8.17,8.17,0,0,1-2.36.65,4.16,4.16,0,0,0,1.81-2.3,8.2,8.2,0,0,1-2.61,1,4.09,4.09,0,0,0-3-1.31,4.14,4.14,0,0,0-4,5.1A11.64,11.64,0,0,1,1.37,2.54,4.18,4.18,0,0,0,2.65,8.08,4.06,4.06,0,0,1,.78,7.56a4.15,4.15,0,0,0,3.3,4.12,4.07,4.07,0,0,1-1.86.07,4.12,4.12,0,0,0,3.84,2.88A8.21,8.21,0,0,1,0,16.36a11.57,11.57,0,0,0,6.3,1.86A11.7,11.7,0,0,0,18,5.87,8.4,8.4,0,0,0,20,3.73Z"></path>
+                      </g>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.instagram.com/asktypsy" target="_blank">
+                    <svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 20 20" class="social__icon___2V45V"
+                      style="vertical-align: middle;">
+                      <g>
+                        <path class="cls-1" d="M18.63,6.47a6.19,6.19,0,0,0-.4-2.08,4.18,4.18,0,0,0-1-1.51,4.26,4.26,0,0,0-1.54-1,6.46,6.46,0,0,0-2.11-.4c-.93,0-1.22-.05-3.58-.05s-2.65,0-3.58.05a6.46,6.46,0,0,0-2.11.4,4.26,4.26,0,0,0-1.54,1,4.18,4.18,0,0,0-1,1.51,6.19,6.19,0,0,0-.4,2.08c0,.91-.05,1.2-.05,3.53s0,2.61.05,3.53a6.19,6.19,0,0,0,.4,2.08,4.19,4.19,0,0,0,1,1.51,4.26,4.26,0,0,0,1.54,1,6.46,6.46,0,0,0,2.11.4c.93,0,1.22.05,3.58.05s2.65,0,3.58-.05a6.46,6.46,0,0,0,2.11-.4,4.26,4.26,0,0,0,1.54-1,4.19,4.19,0,0,0,1-1.51,6.19,6.19,0,0,0,.4-2.08c0-.91.05-1.2.05-3.53S18.67,7.39,18.63,6.47Zm-1.56,7a4.67,4.67,0,0,1-.3,1.59,2.64,2.64,0,0,1-.65,1,2.69,2.69,0,0,1-1,.64,4.88,4.88,0,0,1-1.61.29c-.92,0-1.19.05-3.51.05S7.41,17,6.49,17a4.88,4.88,0,0,1-1.61-.29,2.69,2.69,0,0,1-1-.64,2.64,2.64,0,0,1-.65-1,4.67,4.67,0,0,1-.3-1.59c0-.9-.05-1.17-.05-3.45s0-2.55.05-3.46A4.67,4.67,0,0,1,3.23,5a2.64,2.64,0,0,1,.65-1,2.7,2.7,0,0,1,1-.64A4.88,4.88,0,0,1,6.49,3C7.41,3,7.68,3,10,3s2.59,0,3.51.05a4.88,4.88,0,0,1,1.61.29,2.7,2.7,0,0,1,1,.64,2.64,2.64,0,0,1,.65,1,4.67,4.67,0,0,1,.3,1.59c0,.9.05,1.17.05,3.46S17.11,12.55,17.07,13.45ZM10,5.61A4.39,4.39,0,1,0,14.46,10,4.42,4.42,0,0,0,10,5.61Zm0,7.24A2.85,2.85,0,1,1,12.89,10,2.87,2.87,0,0,1,10,12.85Zm4.64-8.44a1,1,0,1,0,1,1A1,1,0,0,0,14.64,4.41Z"></path>
+                      </g>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.facebook.com/asktypsy" target="_blank">
+                    <svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 20 20" class="social__icon___2V45V"
+                      style="vertical-align: middle;">
+                      <g>
+                        <title>facebook</title>
+                        <path class="cls-1" d="M7.81,7.15H6V10H7.81v8.26h3.5V9.93h2.44L14,7.15h-2.7V5.57c0-.65.14-.91.81-.91H14V1.78H11.59C9,1.78,7.81,2.86,7.81,4.94Z"></path>
+                      </g>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://snapchat.com/add/asktypsy" target="_blank">
+                    <svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 18.7 17.1" class="social__icon___2V45V"
+                      style="vertical-align: middle;">
+                      <g>
+                        <title>snapchat</title>
+                        <path class="cls-1" d="M10.12,18.55H9.88a4.22,4.22,0,0,1-2.52-1,3.67,3.67,0,0,0-1.44-.71,4.75,4.75,0,0,0-.76-.06,5.32,5.32,0,0,0-1,.12,2.38,2.38,0,0,1-.4.06.27.27,0,0,1-.3-.21c0-.15-.08-.29-.11-.42-.08-.34-.13-.55-.26-.57-1.4-.21-2.22-.52-2.39-.89a.34.34,0,0,1,0-.12.22.22,0,0,1,.19-.23,4.91,4.91,0,0,0,2.93-1.7,6.36,6.36,0,0,0,1-1.51h0a1,1,0,0,0,.1-.82c-.18-.41-.78-.6-1.17-.72L3.43,9.7c-.35-.13-.92-.42-.85-.81a.78.78,0,0,1,.76-.48.55.55,0,0,1,.23,0,2.34,2.34,0,0,0,.95.24.81.81,0,0,0,.55-.16q0-.27,0-.54a9,9,0,0,1,.23-3.67A4.92,4.92,0,0,1,9.81,1.45h.38a4.93,4.93,0,0,1,4.56,2.86A9,9,0,0,1,15,8V8c0,.17,0,.33,0,.48a.78.78,0,0,0,.5.16,2.42,2.42,0,0,0,.89-.24.73.73,0,0,1,.29-.06.89.89,0,0,1,.33.06h0a.61.61,0,0,1,.47.49c0,.19-.14.47-.85.75l-.26.09c-.39.12-1,.31-1.17.72a1,1,0,0,0,.1.82h0a5.72,5.72,0,0,0,3.93,3.21.22.22,0,0,1,.19.23.35.35,0,0,1,0,.12c-.16.37-1,.68-2.39.89-.13,0-.19.23-.26.56,0,.14-.06.28-.11.42a.26.26,0,0,1-.28.2h0a2.3,2.3,0,0,1-.4,0,5.32,5.32,0,0,0-1-.11,4.81,4.81,0,0,0-.76.06,3.67,3.67,0,0,0-1.43.71,4.22,4.22,0,0,1-2.52,1"
+                          transform="translate(-0.65 -1.45)"></path>
+                      </g>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/company/7953302/" target="_blank">
+                    <svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 26 26" class="social__icon___2V45V"
+                      style="vertical-align: middle;">
+                      <g>
+                        <title>LinkedIn</title>
+                        <path class="cls-1" d="M6.35,3.2A3.17,3.17,0,1,1,3.17,0,3.19,3.19,0,0,1,6.35,3.2ZM5.88,8.67H.52V26H5.88Zm8.58,0H9.32V26h5.15V16.9c0-2.44,1.12-3.89,3.27-3.89,2,0,2.92,1.39,2.92,3.89V26H26V15c0-4.64-2.63-6.89-6.31-6.89A6,6,0,0,0,14.46,11V8.67Z"></path>
+                      </g>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+  <!-- Optional JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="typsy.css">
+  <link rel="stylesheet" href="public.css">
+
+  <title>Typsy</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand padding" href="#">
+        <span>
+          <svg fill="#ff0055" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 144 49">
+            <g>
+              <title>Typsy</title>
+              <path class="cls-1" d="M28.79,0a5.3,5.3,0,0,0-5.3,5.3v8a5.3,5.3,0,0,0-6.18,1.08,5.3,5.3,0,0,0-9.09,3.06A5.3,5.3,0,0,0,.52,22.21v10a16.78,16.78,0,0,0,33.57,0V5.3A5.3,5.3,0,0,0,28.79,0ZM26.43,5.3a2.36,2.36,0,0,1,4.71,0h0V20.5a9.1,9.1,0,0,0-4.71-2.3V5.3Zm-5.3,10.43a2.36,2.36,0,0,1,2.36,2.36H18.78A2.36,2.36,0,0,1,21.13,15.73ZM23.49,31a2.36,2.36,0,0,1-4.64.59h-.11a5.35,5.35,0,0,0,0-.59V28.68h2.36A2.36,2.36,0,0,1,23.49,31Zm-12.37-13a2.36,2.36,0,0,1,4.71,0h0V19a5.3,5.3,0,0,0,0,8.81V31h0a2.36,2.36,0,0,1-4.71,0ZM3.47,22.21a2.36,2.36,0,1,1,4.71,0h0v4.71h0a2.36,2.36,0,1,1-4.71,0Zm27.68,10h0a13.84,13.84,0,0,1-27.68,0v-.55a5.3,5.3,0,0,0,4.75,0,5.3,5.3,0,0,0,9.09,3.06,5.3,5.3,0,1,0,3.83-9H18.78a2.36,2.36,0,0,1,0-4.71H25a6.18,6.18,0,0,1,6.18,6.18Z"></path>
+              <path class="cls-1" d="M143,16h-5.67a1.43,1.43,0,0,0-1.36,1l-5,15.46a.28.28,0,0,1-.52,0l-5.2-15.56A1.31,1.31,0,0,0,124,16h-6a.48.48,0,0,0-.45.65.09.09,0,0,1-.12.12q-.52-.2-1.06-.37a16.26,16.26,0,0,0-4.89-.78,12.17,12.17,0,0,0-3.62.52A8.44,8.44,0,0,0,105,17.66a7.62,7.62,0,0,0-2,2.53A6.94,6.94,0,0,0,102.4,22,.23.23,0,0,1,102,22a12.12,12.12,0,0,0-2.17-3.18,10.64,10.64,0,0,0-3.69-2.53,11.26,11.26,0,0,0-4.3-.85,8.78,8.78,0,0,0-4.7,1.16A11.33,11.33,0,0,0,84.4,19a.27.27,0,0,1-.48-.18v-2A.9.9,0,0,0,83,16H71.76a1.48,1.48,0,0,0-1.41,1L65.41,32.41a.27.27,0,0,1-.52,0L59.73,17a1.5,1.5,0,0,0-1.42-1H49.07a.61.61,0,0,1-.61-.61V10.25a.52.52,0,0,0-.71-.49l-5.57,2.13a1.19,1.19,0,0,0-.9,1c0,.42,0,1.79,0,2.55V34.11a10.5,10.5,0,0,0,.54,3.66,6,6,0,0,0,1.51,2.34,5.34,5.34,0,0,0,2.32,1.25,11.8,11.8,0,0,0,3,.35,11.28,11.28,0,0,0,3.17-.4,7.8,7.8,0,0,0,1.9-.77,2.18,2.18,0,0,0,.87-1l.85-2.25L56,35.85a.78.78,0,0,0-.75-1l-.15,0a22,22,0,0,1-4.3.54q-2.32,0-2.32-2.46V22.64A.54.54,0,0,1,49,22.1h4.52a1,1,0,0,1,.88.6L61.56,41a.84.84,0,0,1-.06.74,2.77,2.77,0,0,1-.81.93,2.7,2.7,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1.11-.44a.85.85,0,0,0-1.13.52c-.27.81-.71,2.09-1.23,3.33a1.3,1.3,0,0,0,.64,1.67,13.82,13.82,0,0,0,1.77.69,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2,19.65,19.65,0,0,0,1.51-3.29L76.27,21a.24.24,0,0,1,.46.08V48.17a.69.69,0,0,0,.69.69h5.64a.86.86,0,0,0,.86-.86V38.67a.26.26,0,0,1,.45-.18,13,13,0,0,0,2.69,2.15,9,9,0,0,0,4.75,1.13,11.38,11.38,0,0,0,4.35-.85,10.41,10.41,0,0,0,3.66-2.53,12.82,12.82,0,0,0,2.55-4.11,15.06,15.06,0,0,0,1-5.6v-.09q0-.2,0-.4a.23.23,0,0,1,.41-.15,6.8,6.8,0,0,0,1,.95,9.58,9.58,0,0,0,2.43,1.42,26.86,26.86,0,0,0,2.67.92l2,.61a17,17,0,0,1,1.68.59,3.57,3.57,0,0,1,1.16.73,1.36,1.36,0,0,1,.43,1v.09a1.61,1.61,0,0,1-.73,1.37,4,4,0,0,1-2.29.52,11.2,11.2,0,0,1-3.85-.76,26.56,26.56,0,0,1-3.55-1.9.64.64,0,0,0-.91.36c-.09.26-.18.51-.28.76A15.15,15.15,0,0,1,102,37.49a.93.93,0,0,0,.29,1.31,29.08,29.08,0,0,0,4.06,2,15.94,15.94,0,0,0,5.51.92,14.07,14.07,0,0,0,3.8-.5,9.27,9.27,0,0,0,3.1-1.49,6.73,6.73,0,0,0,2.06-2.53,8.44,8.44,0,0,0,.73-3.66V33.5a5.86,5.86,0,0,0-.71-3,7.14,7.14,0,0,0-1.8-2.08A11.08,11.08,0,0,0,116.58,27q-1.37-.59-2.69-1-1-.33-2-.66a15.07,15.07,0,0,1-1.63-.69,4.71,4.71,0,0,1-1.13-.76,1.24,1.24,0,0,1-.43-.92v-.09a1.51,1.51,0,0,1,.66-1.25,3.29,3.29,0,0,1,2-.5,9.63,9.63,0,0,1,3.17.64c1.12.4,2.08.79,2.68,1.06a1,1,0,0,0,1.2-.29l.71-.87a.26.26,0,0,1,.44.07L127.12,41a.81.81,0,0,1-.06.71,2.79,2.79,0,0,1-.82.94,2.71,2.71,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1-.4a1,1,0,0,0-1.32.59l-1.29,3.5a1,1,0,0,0,.48,1.19,18.65,18.65,0,0,0,2.11.89,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2A19.65,19.65,0,0,0,134,41.91l9.47-25.24A.53.53,0,0,0,143,16ZM90.89,35.52c-3.24.28-6.14-2.6-6.48-6.45s2-7.19,5.26-7.47,6.14,2.6,6.48,6.45S94.13,35.24,90.89,35.52Z"></path>
+            </g>
+          </svg>
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              Discover
+            </a>
+            <div class="dropdown-menu">
+              <a asp-area="" asp-controller="Discover" asp-action="Index" class="dropdown-item">Lessons</a>
+              <a asp-area="" asp-controller="Instructors" asp-action="Index" class="dropdown-item">Instructors</a>
+              <a asp-area="" asp-controller="Courses" asp-action="Index" class="dropdown-item">Courses</a>
+              <div class="dropdown-divider"></div>
+              <a asp-area="" asp-controller="SignUp" asp-action="Index" class="dropdown-item">Sign up today</a>
+              <a asp-area="" asp-controller="SignUp" asp-action="Index" class="dropdown-item">Subscriptions</a>
+              <div class="dropdown-divider"></div>
+              <a asp-area="" asp-controller="Content" asp-action="Integrations" class="dropdown-item">Integrations</a>
+              <a asp-area="" asp-controller="Content" asp-action="CustomContent" class="dropdown-item">Custom Content</a>
+              <a asp-area="" asp-controller="Home" asp-action="Newsletter" class="dropdown-item">Newsletter</a>
+              <div class="dropdown-divider"></div>
+              <a asp-area="" asp-controller="Content" asp-action="HubSpot" class="dropdown-item">HubSpot Test</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              Business
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Single Venue</a>
+              <a class="dropdown-item" href="#">Multi Venue</a>
+              <a class="dropdown-item" href="#">Corporate</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Academic</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              About
+            </a>
+            <div class="dropdown-menu">
+              <a asp-area="" asp-controller="Content" asp-action="Who" class="dropdown-item">Who we are</a>
+              <a asp-area="" asp-controller="Content" asp-action="Where" class="dropdown-item">Where we are</a>
+              <a asp-area="" asp-controller="Content" asp-action="Team" class="dropdown-item">Meet the Team</a>
+              <a asp-area="" asp-controller="Home" asp-action="Contact" class="dropdown-item">Contact Us</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              Login
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a href="@Settings.TypsyIndividualWebSiteUrl" class="dropdown-item" target="_blank">Member</a>
+              <a href="@Settings.TypsyManagerWebSiteUrl" class="dropdown-item" target="_blank">Manager</a>
+              <div class="dropdown-divider"></div>
+              <a asp-area="" asp-controller="SignUp" asp-action="Index" class="dropdown-item">Sign Up</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </nav>
+
+  <!--Carousel Wrapper-->
+  <div id="carousels" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carousels" data-slide-to="0" class="active"></li>
+      <li data-target="#carousels" data-slide-to="1"></li>
+      <li data-target="#carousels" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="https://typsy.blob.core.windows.net/general/bgimage.jpg" alt="First slide">
+        <div class="carousel-caption">
+          <h1 class="display-5">Typsy is your online hospitality playground</h1>
+          <h5>
+            Its's fun. It's interactive. It's yours. Join the tribe.
+          </h5>
+          <a class="btn btn-typsy-red padding" href="#">HOW TYPSY WORKS</a>
+          <a class="btn btn-outline-light padding" href="#">EXPLORE PLANS</a>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://typsy.blob.core.windows.net/general/bgimage.jpg" alt="Second slide">
+        <div class="carousel-caption">
+          <h1 class="display-5">Typsy is your online hospitality playground</h1>
+          <h5>
+            Its's fun. It's interactive. It's yours. Join the tribe.
+          </h5>
+          <a class="btn btn-typsy-red padding" href="#">HOW TYPSY WORKS</a>
+          <a class="btn btn-outline-light padding" href="#">EXPLORE PLANS</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://typsy.blob.core.windows.net/general/bgimage.jpg" alt="First slide">
+        <div class="carousel-caption">
+          <h1 class="display-5">Typsy is your online hospitality playground</h1>
+          <h5>
+            Its's fun. It's interactive. It's yours. Join the tribe.
+          </h5>
+          <a class="btn btn-typsy-red padding" href="#">HOW TYPSY WORKS</a>
+          <a class="btn btn-outline-light padding" href="#">EXPLORE PLANS</a>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carousels" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousels" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+
+  </div>
+  <!--Carousel Wrapper-->
+
+  <!--Three Colum Section-->
+  <div class="container-fluid padding">
+    <div class="row text-center padding">
+      <div class="col-xs-12 col-sm-12 col-md-4 vertical-center">
+        <h1 class="typsy-blue">How Typsy works for you</h1>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <img src="https://typsy.blob.core.windows.net/general/testpicture.JPG" class="img-fluid" alt="">
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4 vertical-center text-left">
+        <p>Skill up and see yourself profress in the hospitality industry by watching our online training videos.</p>
+        <p>All our skills are online, so you don't need to worry about not having the time to teach our staff new tricks.</p>
+        <p>All our skills are online, so you don't need to worry about not having the time to teach our staff new tricks.</p>
+      </div>
+    </div>
+  </div>
+  <!--Three Colum Section-->
+
+  <!--Three Colum Section-->
+  <div class="container-fluid padding bg-typsy-blue text-white">
+    <div class="row reasons padding">
+      <div class="col-md-3 vertical-center">
+        <h1>3 reasons you'll love Typsy</h1>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-3">
+        <span class="logo">
+          <svg fill="#94E0DC" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 144 49" style="vertical-align: middle;">
+            <g>
+              <title>Typsy</title>
+              <path class="cls-1" d="M28.79,0a5.3,5.3,0,0,0-5.3,5.3v8a5.3,5.3,0,0,0-6.18,1.08,5.3,5.3,0,0,0-9.09,3.06A5.3,5.3,0,0,0,.52,22.21v10a16.78,16.78,0,0,0,33.57,0V5.3A5.3,5.3,0,0,0,28.79,0ZM26.43,5.3a2.36,2.36,0,0,1,4.71,0h0V20.5a9.1,9.1,0,0,0-4.71-2.3V5.3Zm-5.3,10.43a2.36,2.36,0,0,1,2.36,2.36H18.78A2.36,2.36,0,0,1,21.13,15.73ZM23.49,31a2.36,2.36,0,0,1-4.64.59h-.11a5.35,5.35,0,0,0,0-.59V28.68h2.36A2.36,2.36,0,0,1,23.49,31Zm-12.37-13a2.36,2.36,0,0,1,4.71,0h0V19a5.3,5.3,0,0,0,0,8.81V31h0a2.36,2.36,0,0,1-4.71,0ZM3.47,22.21a2.36,2.36,0,1,1,4.71,0h0v4.71h0a2.36,2.36,0,1,1-4.71,0Zm27.68,10h0a13.84,13.84,0,0,1-27.68,0v-.55a5.3,5.3,0,0,0,4.75,0,5.3,5.3,0,0,0,9.09,3.06,5.3,5.3,0,1,0,3.83-9H18.78a2.36,2.36,0,0,1,0-4.71H25a6.18,6.18,0,0,1,6.18,6.18Z"></path>
+              <path class="cls-1" d="M143,16h-5.67a1.43,1.43,0,0,0-1.36,1l-5,15.46a.28.28,0,0,1-.52,0l-5.2-15.56A1.31,1.31,0,0,0,124,16h-6a.48.48,0,0,0-.45.65.09.09,0,0,1-.12.12q-.52-.2-1.06-.37a16.26,16.26,0,0,0-4.89-.78,12.17,12.17,0,0,0-3.62.52A8.44,8.44,0,0,0,105,17.66a7.62,7.62,0,0,0-2,2.53A6.94,6.94,0,0,0,102.4,22,.23.23,0,0,1,102,22a12.12,12.12,0,0,0-2.17-3.18,10.64,10.64,0,0,0-3.69-2.53,11.26,11.26,0,0,0-4.3-.85,8.78,8.78,0,0,0-4.7,1.16A11.33,11.33,0,0,0,84.4,19a.27.27,0,0,1-.48-.18v-2A.9.9,0,0,0,83,16H71.76a1.48,1.48,0,0,0-1.41,1L65.41,32.41a.27.27,0,0,1-.52,0L59.73,17a1.5,1.5,0,0,0-1.42-1H49.07a.61.61,0,0,1-.61-.61V10.25a.52.52,0,0,0-.71-.49l-5.57,2.13a1.19,1.19,0,0,0-.9,1c0,.42,0,1.79,0,2.55V34.11a10.5,10.5,0,0,0,.54,3.66,6,6,0,0,0,1.51,2.34,5.34,5.34,0,0,0,2.32,1.25,11.8,11.8,0,0,0,3,.35,11.28,11.28,0,0,0,3.17-.4,7.8,7.8,0,0,0,1.9-.77,2.18,2.18,0,0,0,.87-1l.85-2.25L56,35.85a.78.78,0,0,0-.75-1l-.15,0a22,22,0,0,1-4.3.54q-2.32,0-2.32-2.46V22.64A.54.54,0,0,1,49,22.1h4.52a1,1,0,0,1,.88.6L61.56,41a.84.84,0,0,1-.06.74,2.77,2.77,0,0,1-.81.93,2.7,2.7,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1.11-.44a.85.85,0,0,0-1.13.52c-.27.81-.71,2.09-1.23,3.33a1.3,1.3,0,0,0,.64,1.67,13.82,13.82,0,0,0,1.77.69,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2,19.65,19.65,0,0,0,1.51-3.29L76.27,21a.24.24,0,0,1,.46.08V48.17a.69.69,0,0,0,.69.69h5.64a.86.86,0,0,0,.86-.86V38.67a.26.26,0,0,1,.45-.18,13,13,0,0,0,2.69,2.15,9,9,0,0,0,4.75,1.13,11.38,11.38,0,0,0,4.35-.85,10.41,10.41,0,0,0,3.66-2.53,12.82,12.82,0,0,0,2.55-4.11,15.06,15.06,0,0,0,1-5.6v-.09q0-.2,0-.4a.23.23,0,0,1,.41-.15,6.8,6.8,0,0,0,1,.95,9.58,9.58,0,0,0,2.43,1.42,26.86,26.86,0,0,0,2.67.92l2,.61a17,17,0,0,1,1.68.59,3.57,3.57,0,0,1,1.16.73,1.36,1.36,0,0,1,.43,1v.09a1.61,1.61,0,0,1-.73,1.37,4,4,0,0,1-2.29.52,11.2,11.2,0,0,1-3.85-.76,26.56,26.56,0,0,1-3.55-1.9.64.64,0,0,0-.91.36c-.09.26-.18.51-.28.76A15.15,15.15,0,0,1,102,37.49a.93.93,0,0,0,.29,1.31,29.08,29.08,0,0,0,4.06,2,15.94,15.94,0,0,0,5.51.92,14.07,14.07,0,0,0,3.8-.5,9.27,9.27,0,0,0,3.1-1.49,6.73,6.73,0,0,0,2.06-2.53,8.44,8.44,0,0,0,.73-3.66V33.5a5.86,5.86,0,0,0-.71-3,7.14,7.14,0,0,0-1.8-2.08A11.08,11.08,0,0,0,116.58,27q-1.37-.59-2.69-1-1-.33-2-.66a15.07,15.07,0,0,1-1.63-.69,4.71,4.71,0,0,1-1.13-.76,1.24,1.24,0,0,1-.43-.92v-.09a1.51,1.51,0,0,1,.66-1.25,3.29,3.29,0,0,1,2-.5,9.63,9.63,0,0,1,3.17.64c1.12.4,2.08.79,2.68,1.06a1,1,0,0,0,1.2-.29l.71-.87a.26.26,0,0,1,.44.07L127.12,41a.81.81,0,0,1-.06.71,2.79,2.79,0,0,1-.82.94,2.71,2.71,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1-.4a1,1,0,0,0-1.32.59l-1.29,3.5a1,1,0,0,0,.48,1.19,18.65,18.65,0,0,0,2.11.89,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2A19.65,19.65,0,0,0,134,41.91l9.47-25.24A.53.53,0,0,0,143,16ZM90.89,35.52c-3.24.28-6.14-2.6-6.48-6.45s2-7.19,5.26-7.47,6.14,2.6,6.48,6.45S94.13,35.24,90.89,35.52Z"></path>
+            </g>
+          </svg>
+        </span>
+        <h3>Thumbs up for Scrolling.</h3>
+        <p>
+          Duis expedita sit harum excepturi soluta error cum impedit ut placeat incididunt eum enim optio et libero vero duis error.
+          Duis expedita sit harum excepturi soluta error cum impedit ut placeat incididunt eum enim optio et libero vero
+          duis error. Duis expedita sit harum excepturi soluta error cum impedit ut placeat incididunt eum enim optio et
+          libero vero duis error
+        </p>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-3">
+        <span class="logo">
+          <svg fill="#94E0DC" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 144 49" style="vertical-align: middle;">
+            <g>
+              <title>Typsy</title>
+              <path class="cls-1" d="M28.79,0a5.3,5.3,0,0,0-5.3,5.3v8a5.3,5.3,0,0,0-6.18,1.08,5.3,5.3,0,0,0-9.09,3.06A5.3,5.3,0,0,0,.52,22.21v10a16.78,16.78,0,0,0,33.57,0V5.3A5.3,5.3,0,0,0,28.79,0ZM26.43,5.3a2.36,2.36,0,0,1,4.71,0h0V20.5a9.1,9.1,0,0,0-4.71-2.3V5.3Zm-5.3,10.43a2.36,2.36,0,0,1,2.36,2.36H18.78A2.36,2.36,0,0,1,21.13,15.73ZM23.49,31a2.36,2.36,0,0,1-4.64.59h-.11a5.35,5.35,0,0,0,0-.59V28.68h2.36A2.36,2.36,0,0,1,23.49,31Zm-12.37-13a2.36,2.36,0,0,1,4.71,0h0V19a5.3,5.3,0,0,0,0,8.81V31h0a2.36,2.36,0,0,1-4.71,0ZM3.47,22.21a2.36,2.36,0,1,1,4.71,0h0v4.71h0a2.36,2.36,0,1,1-4.71,0Zm27.68,10h0a13.84,13.84,0,0,1-27.68,0v-.55a5.3,5.3,0,0,0,4.75,0,5.3,5.3,0,0,0,9.09,3.06,5.3,5.3,0,1,0,3.83-9H18.78a2.36,2.36,0,0,1,0-4.71H25a6.18,6.18,0,0,1,6.18,6.18Z"></path>
+              <path class="cls-1" d="M143,16h-5.67a1.43,1.43,0,0,0-1.36,1l-5,15.46a.28.28,0,0,1-.52,0l-5.2-15.56A1.31,1.31,0,0,0,124,16h-6a.48.48,0,0,0-.45.65.09.09,0,0,1-.12.12q-.52-.2-1.06-.37a16.26,16.26,0,0,0-4.89-.78,12.17,12.17,0,0,0-3.62.52A8.44,8.44,0,0,0,105,17.66a7.62,7.62,0,0,0-2,2.53A6.94,6.94,0,0,0,102.4,22,.23.23,0,0,1,102,22a12.12,12.12,0,0,0-2.17-3.18,10.64,10.64,0,0,0-3.69-2.53,11.26,11.26,0,0,0-4.3-.85,8.78,8.78,0,0,0-4.7,1.16A11.33,11.33,0,0,0,84.4,19a.27.27,0,0,1-.48-.18v-2A.9.9,0,0,0,83,16H71.76a1.48,1.48,0,0,0-1.41,1L65.41,32.41a.27.27,0,0,1-.52,0L59.73,17a1.5,1.5,0,0,0-1.42-1H49.07a.61.61,0,0,1-.61-.61V10.25a.52.52,0,0,0-.71-.49l-5.57,2.13a1.19,1.19,0,0,0-.9,1c0,.42,0,1.79,0,2.55V34.11a10.5,10.5,0,0,0,.54,3.66,6,6,0,0,0,1.51,2.34,5.34,5.34,0,0,0,2.32,1.25,11.8,11.8,0,0,0,3,.35,11.28,11.28,0,0,0,3.17-.4,7.8,7.8,0,0,0,1.9-.77,2.18,2.18,0,0,0,.87-1l.85-2.25L56,35.85a.78.78,0,0,0-.75-1l-.15,0a22,22,0,0,1-4.3.54q-2.32,0-2.32-2.46V22.64A.54.54,0,0,1,49,22.1h4.52a1,1,0,0,1,.88.6L61.56,41a.84.84,0,0,1-.06.74,2.77,2.77,0,0,1-.81.93,2.7,2.7,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1.11-.44a.85.85,0,0,0-1.13.52c-.27.81-.71,2.09-1.23,3.33a1.3,1.3,0,0,0,.64,1.67,13.82,13.82,0,0,0,1.77.69,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2,19.65,19.65,0,0,0,1.51-3.29L76.27,21a.24.24,0,0,1,.46.08V48.17a.69.69,0,0,0,.69.69h5.64a.86.86,0,0,0,.86-.86V38.67a.26.26,0,0,1,.45-.18,13,13,0,0,0,2.69,2.15,9,9,0,0,0,4.75,1.13,11.38,11.38,0,0,0,4.35-.85,10.41,10.41,0,0,0,3.66-2.53,12.82,12.82,0,0,0,2.55-4.11,15.06,15.06,0,0,0,1-5.6v-.09q0-.2,0-.4a.23.23,0,0,1,.41-.15,6.8,6.8,0,0,0,1,.95,9.58,9.58,0,0,0,2.43,1.42,26.86,26.86,0,0,0,2.67.92l2,.61a17,17,0,0,1,1.68.59,3.57,3.57,0,0,1,1.16.73,1.36,1.36,0,0,1,.43,1v.09a1.61,1.61,0,0,1-.73,1.37,4,4,0,0,1-2.29.52,11.2,11.2,0,0,1-3.85-.76,26.56,26.56,0,0,1-3.55-1.9.64.64,0,0,0-.91.36c-.09.26-.18.51-.28.76A15.15,15.15,0,0,1,102,37.49a.93.93,0,0,0,.29,1.31,29.08,29.08,0,0,0,4.06,2,15.94,15.94,0,0,0,5.51.92,14.07,14.07,0,0,0,3.8-.5,9.27,9.27,0,0,0,3.1-1.49,6.73,6.73,0,0,0,2.06-2.53,8.44,8.44,0,0,0,.73-3.66V33.5a5.86,5.86,0,0,0-.71-3,7.14,7.14,0,0,0-1.8-2.08A11.08,11.08,0,0,0,116.58,27q-1.37-.59-2.69-1-1-.33-2-.66a15.07,15.07,0,0,1-1.63-.69,4.71,4.71,0,0,1-1.13-.76,1.24,1.24,0,0,1-.43-.92v-.09a1.51,1.51,0,0,1,.66-1.25,3.29,3.29,0,0,1,2-.5,9.63,9.63,0,0,1,3.17.64c1.12.4,2.08.79,2.68,1.06a1,1,0,0,0,1.2-.29l.71-.87a.26.26,0,0,1,.44.07L127.12,41a.81.81,0,0,1-.06.71,2.79,2.79,0,0,1-.82.94,2.71,2.71,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1-.4a1,1,0,0,0-1.32.59l-1.29,3.5a1,1,0,0,0,.48,1.19,18.65,18.65,0,0,0,2.11.89,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2A19.65,19.65,0,0,0,134,41.91l9.47-25.24A.53.53,0,0,0,143,16ZM90.89,35.52c-3.24.28-6.14-2.6-6.48-6.45s2-7.19,5.26-7.47,6.14,2.6,6.48,6.45S94.13,35.24,90.89,35.52Z"></path>
+            </g>
+          </svg>
+        </span>
+        <h3>Thumbs up for Scrolling.</h3>
+        <p>
+          Duis expedita sit harum excepturi soluta error cum impedit ut placeat incididunt eum enim optio et libero vero duis error.
+          Duis expedita sit harum excepturi soluta error cum impedit ut placeat incididunt eum enim optio et libero vero
+          duis error. Duis expedita sit harum excepturi soluta error cum impedit ut placeat incididunt eum enim optio et
+          libero vero duis error
+        </p>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-3">
+        <span class="logo">
+          <svg fill="#94E0DC" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 144 49" style="vertical-align: middle;">
+            <g>
+              <title>Typsy</title>
+              <path class="cls-1" d="M28.79,0a5.3,5.3,0,0,0-5.3,5.3v8a5.3,5.3,0,0,0-6.18,1.08,5.3,5.3,0,0,0-9.09,3.06A5.3,5.3,0,0,0,.52,22.21v10a16.78,16.78,0,0,0,33.57,0V5.3A5.3,5.3,0,0,0,28.79,0ZM26.43,5.3a2.36,2.36,0,0,1,4.71,0h0V20.5a9.1,9.1,0,0,0-4.71-2.3V5.3Zm-5.3,10.43a2.36,2.36,0,0,1,2.36,2.36H18.78A2.36,2.36,0,0,1,21.13,15.73ZM23.49,31a2.36,2.36,0,0,1-4.64.59h-.11a5.35,5.35,0,0,0,0-.59V28.68h2.36A2.36,2.36,0,0,1,23.49,31Zm-12.37-13a2.36,2.36,0,0,1,4.71,0h0V19a5.3,5.3,0,0,0,0,8.81V31h0a2.36,2.36,0,0,1-4.71,0ZM3.47,22.21a2.36,2.36,0,1,1,4.71,0h0v4.71h0a2.36,2.36,0,1,1-4.71,0Zm27.68,10h0a13.84,13.84,0,0,1-27.68,0v-.55a5.3,5.3,0,0,0,4.75,0,5.3,5.3,0,0,0,9.09,3.06,5.3,5.3,0,1,0,3.83-9H18.78a2.36,2.36,0,0,1,0-4.71H25a6.18,6.18,0,0,1,6.18,6.18Z"></path>
+              <path class="cls-1" d="M143,16h-5.67a1.43,1.43,0,0,0-1.36,1l-5,15.46a.28.28,0,0,1-.52,0l-5.2-15.56A1.31,1.31,0,0,0,124,16h-6a.48.48,0,0,0-.45.65.09.09,0,0,1-.12.12q-.52-.2-1.06-.37a16.26,16.26,0,0,0-4.89-.78,12.17,12.17,0,0,0-3.62.52A8.44,8.44,0,0,0,105,17.66a7.62,7.62,0,0,0-2,2.53A6.94,6.94,0,0,0,102.4,22,.23.23,0,0,1,102,22a12.12,12.12,0,0,0-2.17-3.18,10.64,10.64,0,0,0-3.69-2.53,11.26,11.26,0,0,0-4.3-.85,8.78,8.78,0,0,0-4.7,1.16A11.33,11.33,0,0,0,84.4,19a.27.27,0,0,1-.48-.18v-2A.9.9,0,0,0,83,16H71.76a1.48,1.48,0,0,0-1.41,1L65.41,32.41a.27.27,0,0,1-.52,0L59.73,17a1.5,1.5,0,0,0-1.42-1H49.07a.61.61,0,0,1-.61-.61V10.25a.52.52,0,0,0-.71-.49l-5.57,2.13a1.19,1.19,0,0,0-.9,1c0,.42,0,1.79,0,2.55V34.11a10.5,10.5,0,0,0,.54,3.66,6,6,0,0,0,1.51,2.34,5.34,5.34,0,0,0,2.32,1.25,11.8,11.8,0,0,0,3,.35,11.28,11.28,0,0,0,3.17-.4,7.8,7.8,0,0,0,1.9-.77,2.18,2.18,0,0,0,.87-1l.85-2.25L56,35.85a.78.78,0,0,0-.75-1l-.15,0a22,22,0,0,1-4.3.54q-2.32,0-2.32-2.46V22.64A.54.54,0,0,1,49,22.1h4.52a1,1,0,0,1,.88.6L61.56,41a.84.84,0,0,1-.06.74,2.77,2.77,0,0,1-.81.93,2.7,2.7,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1.11-.44a.85.85,0,0,0-1.13.52c-.27.81-.71,2.09-1.23,3.33a1.3,1.3,0,0,0,.64,1.67,13.82,13.82,0,0,0,1.77.69,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2,19.65,19.65,0,0,0,1.51-3.29L76.27,21a.24.24,0,0,1,.46.08V48.17a.69.69,0,0,0,.69.69h5.64a.86.86,0,0,0,.86-.86V38.67a.26.26,0,0,1,.45-.18,13,13,0,0,0,2.69,2.15,9,9,0,0,0,4.75,1.13,11.38,11.38,0,0,0,4.35-.85,10.41,10.41,0,0,0,3.66-2.53,12.82,12.82,0,0,0,2.55-4.11,15.06,15.06,0,0,0,1-5.6v-.09q0-.2,0-.4a.23.23,0,0,1,.41-.15,6.8,6.8,0,0,0,1,.95,9.58,9.58,0,0,0,2.43,1.42,26.86,26.86,0,0,0,2.67.92l2,.61a17,17,0,0,1,1.68.59,3.57,3.57,0,0,1,1.16.73,1.36,1.36,0,0,1,.43,1v.09a1.61,1.61,0,0,1-.73,1.37,4,4,0,0,1-2.29.52,11.2,11.2,0,0,1-3.85-.76,26.56,26.56,0,0,1-3.55-1.9.64.64,0,0,0-.91.36c-.09.26-.18.51-.28.76A15.15,15.15,0,0,1,102,37.49a.93.93,0,0,0,.29,1.31,29.08,29.08,0,0,0,4.06,2,15.94,15.94,0,0,0,5.51.92,14.07,14.07,0,0,0,3.8-.5,9.27,9.27,0,0,0,3.1-1.49,6.73,6.73,0,0,0,2.06-2.53,8.44,8.44,0,0,0,.73-3.66V33.5a5.86,5.86,0,0,0-.71-3,7.14,7.14,0,0,0-1.8-2.08A11.08,11.08,0,0,0,116.58,27q-1.37-.59-2.69-1-1-.33-2-.66a15.07,15.07,0,0,1-1.63-.69,4.71,4.71,0,0,1-1.13-.76,1.24,1.24,0,0,1-.43-.92v-.09a1.51,1.51,0,0,1,.66-1.25,3.29,3.29,0,0,1,2-.5,9.63,9.63,0,0,1,3.17.64c1.12.4,2.08.79,2.68,1.06a1,1,0,0,0,1.2-.29l.71-.87a.26.26,0,0,1,.44.07L127.12,41a.81.81,0,0,1-.06.71,2.79,2.79,0,0,1-.82.94,2.71,2.71,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1-.4a1,1,0,0,0-1.32.59l-1.29,3.5a1,1,0,0,0,.48,1.19,18.65,18.65,0,0,0,2.11.89,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2A19.65,19.65,0,0,0,134,41.91l9.47-25.24A.53.53,0,0,0,143,16ZM90.89,35.52c-3.24.28-6.14-2.6-6.48-6.45s2-7.19,5.26-7.47,6.14,2.6,6.48,6.45S94.13,35.24,90.89,35.52Z"></path>
+            </g>
+          </svg>
+        </span>
+        <h3>Thumbs up for Scrolling.</h3>
+        <p>
+          Duis expedita sit harum excepturi soluta error cum impedit ut placeat incididunt eum enim optio et libero vero duis error.
+          Duis expedita sit harum excepturi soluta error cum impedit ut placeat incididunt eum enim optio et libero vero
+          duis error. Duis expedita sit harum excepturi soluta error cum impedit ut placeat incididunt eum enim optio et
+          libero vero duis error
+        </p>
+      </div>
+    </div>
+  </div>
+  <!--Three Colum Section-->
+  <div class="container-fluid padding" style="background-image:url('https://typsy.blob.core.windows.net/general/Skill_up.png');background-repeat:no-repeat;background-position:top; background-size:cover;">
+    <div class="row videos padding">
+      <div class="col-12">
+        <h1 class="display-5 typsy-blue text-center">With these great instructorss it takes just<br> 10 mins to learn a new skill</h1>
+        <br>
+
+        <ul class="nav nav-justified my-5">
+          <li class="nav-item learning_tab">
+            <a class="nav-link active" data-toggle="tab" href="#panel1" role="tab" style="color:black">
+              <h3>Learning</h3>
+            </a>
+          </li>
+
+          <li class="nav-item instructor_tab">
+            <a class="nav-link" data-toggle="tab" href="#panel2" role="tab" style="color:black">
+              <h3>Instructors</h3>
+            </a>
+          </li>
+        </ul>
+        <!-- Tab panels -->
+        <div class="tab-content">
+          <!--Panel 1-->
+          <div class="tab-pane fade in show active" id="panel1">
+            <!--Carousel Wrapper-->
+            <div class="carousel slide" data-ride="carousel">
+              <!--Slides-->
+              <div class="carousel-inner">
+                <!--First slide-->
+                <div class="carousel-item active">
+
+                  <div class="row padding">
+                    <div class="col-md-4">
+                      <div class="card mb-2">
+                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h4 class="card-title">Card title</h4>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a class="btn btn-typsy-red" href="#">See more information</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="card mb-2">
+                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h4 class="card-title">Card title</h4>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a class="btn btn-typsy-red" href="#">See more information</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="card mb-2">
+                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h4 class="card-title">Card title</h4>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a class="btn btn-typsy-red" href="#">See more information</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <!--First slide-->
+                <!--Second slide-->
+                <div class="carousel-item">
+
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="card mb-2">
+                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h4 class="card-title">Card title</h4>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a class="btn btn-typsy-red" href="#">See more information</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="card mb-2">
+                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h4 class="card-title">Card title</h4>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a class="btn btn-typsy-red" href="#">See more information</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="card mb-2">
+                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h4 class="card-title">Card title</h4>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a class="btn btn-typsy-red" href="#">See more information</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Second slide-->
+
+
+              </div>
+              <!--Slides-->
+            </div>
+
+            <!--Carousel Wrapper-->
+          </div>
+          <!--Panel 1-->
+          <!--Panel 2-->
+          <div class="tab-pane fade" id="panel2">
+
+            <div class="carousel slide" data-ride="carousel">
+              <!--Slides-->
+              <div class="carousel-inner" role="listbox">
+
+                <!--First slide-->
+                <div class="carousel-item active">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="card mb-2">
+                        <img class="card-img-top" src="https://typsy.blob.core.windows.net/images/instructors/Sebastian_Priller_Typsy_instructor_245x245.png"
+                          alt="Card image cap">
+                        <div class="card-body">
+                          <h4 class="card-title">Card title</h4>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a class="btn btn-typsy-red" href="#">See more information</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-3">
+                      <div class="card mb-2">
+                        <img class="card-img-top" src="https://typsy.blob.core.windows.net/images/instructors/JJ_Goodman_Typsy_instructor_245x245.png"
+                          alt="Card image cap">
+                        <div class="card-body">
+                          <h4 class="card-title">Card title</h4>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a class="btn btn-typsy-red" href="#">See more information</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-3">
+                      <div class="card mb-2">
+                        <img class="card-img-top" src="https://typsy.blob.core.windows.net/images/instructors/Glenn_Flood_Typsy_instructor_245x245.jpg"
+                          alt="Card image cap">
+                        <div class="card-body">
+                          <h4 class="card-title">Card title</h4>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a class="btn btn-typsy-red" href="#">See more information</a>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <!--/.First slide-->
+              </div>
+              <!--/.Slides-->
+            </div>
+          </div>
+
+          <!--/.Panel 2-->
+        </div>
+        <div class="col-12 text-center py-5 my-5">
+            <a class="btn btn-lg btn-typsy-red text-uppercase text-center px-5 py-md-3" href="#">See all courses and lessons</a>
+          </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <div class="container-fluid text-center my-5 px-5 py-5">
+    <h1 class="my-5 py-5 px-5 typsy-blue">Team love Typsy</h1>
+    <br>
+    <div class="row padding">
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="logo-content px-lg-5">
+          <span class="logo my-5">
+            <svg fill="#ff0055" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 144 49" style="vertical-align: middle;">
+              <g>
+                <title>Typsy</title>
+                <path class="cls-1" d="M28.79,0a5.3,5.3,0,0,0-5.3,5.3v8a5.3,5.3,0,0,0-6.18,1.08,5.3,5.3,0,0,0-9.09,3.06A5.3,5.3,0,0,0,.52,22.21v10a16.78,16.78,0,0,0,33.57,0V5.3A5.3,5.3,0,0,0,28.79,0ZM26.43,5.3a2.36,2.36,0,0,1,4.71,0h0V20.5a9.1,9.1,0,0,0-4.71-2.3V5.3Zm-5.3,10.43a2.36,2.36,0,0,1,2.36,2.36H18.78A2.36,2.36,0,0,1,21.13,15.73ZM23.49,31a2.36,2.36,0,0,1-4.64.59h-.11a5.35,5.35,0,0,0,0-.59V28.68h2.36A2.36,2.36,0,0,1,23.49,31Zm-12.37-13a2.36,2.36,0,0,1,4.71,0h0V19a5.3,5.3,0,0,0,0,8.81V31h0a2.36,2.36,0,0,1-4.71,0ZM3.47,22.21a2.36,2.36,0,1,1,4.71,0h0v4.71h0a2.36,2.36,0,1,1-4.71,0Zm27.68,10h0a13.84,13.84,0,0,1-27.68,0v-.55a5.3,5.3,0,0,0,4.75,0,5.3,5.3,0,0,0,9.09,3.06,5.3,5.3,0,1,0,3.83-9H18.78a2.36,2.36,0,0,1,0-4.71H25a6.18,6.18,0,0,1,6.18,6.18Z"></path>
+                <path class="cls-1" d="M143,16h-5.67a1.43,1.43,0,0,0-1.36,1l-5,15.46a.28.28,0,0,1-.52,0l-5.2-15.56A1.31,1.31,0,0,0,124,16h-6a.48.48,0,0,0-.45.65.09.09,0,0,1-.12.12q-.52-.2-1.06-.37a16.26,16.26,0,0,0-4.89-.78,12.17,12.17,0,0,0-3.62.52A8.44,8.44,0,0,0,105,17.66a7.62,7.62,0,0,0-2,2.53A6.94,6.94,0,0,0,102.4,22,.23.23,0,0,1,102,22a12.12,12.12,0,0,0-2.17-3.18,10.64,10.64,0,0,0-3.69-2.53,11.26,11.26,0,0,0-4.3-.85,8.78,8.78,0,0,0-4.7,1.16A11.33,11.33,0,0,0,84.4,19a.27.27,0,0,1-.48-.18v-2A.9.9,0,0,0,83,16H71.76a1.48,1.48,0,0,0-1.41,1L65.41,32.41a.27.27,0,0,1-.52,0L59.73,17a1.5,1.5,0,0,0-1.42-1H49.07a.61.61,0,0,1-.61-.61V10.25a.52.52,0,0,0-.71-.49l-5.57,2.13a1.19,1.19,0,0,0-.9,1c0,.42,0,1.79,0,2.55V34.11a10.5,10.5,0,0,0,.54,3.66,6,6,0,0,0,1.51,2.34,5.34,5.34,0,0,0,2.32,1.25,11.8,11.8,0,0,0,3,.35,11.28,11.28,0,0,0,3.17-.4,7.8,7.8,0,0,0,1.9-.77,2.18,2.18,0,0,0,.87-1l.85-2.25L56,35.85a.78.78,0,0,0-.75-1l-.15,0a22,22,0,0,1-4.3.54q-2.32,0-2.32-2.46V22.64A.54.54,0,0,1,49,22.1h4.52a1,1,0,0,1,.88.6L61.56,41a.84.84,0,0,1-.06.74,2.77,2.77,0,0,1-.81.93,2.7,2.7,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1.11-.44a.85.85,0,0,0-1.13.52c-.27.81-.71,2.09-1.23,3.33a1.3,1.3,0,0,0,.64,1.67,13.82,13.82,0,0,0,1.77.69,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2,19.65,19.65,0,0,0,1.51-3.29L76.27,21a.24.24,0,0,1,.46.08V48.17a.69.69,0,0,0,.69.69h5.64a.86.86,0,0,0,.86-.86V38.67a.26.26,0,0,1,.45-.18,13,13,0,0,0,2.69,2.15,9,9,0,0,0,4.75,1.13,11.38,11.38,0,0,0,4.35-.85,10.41,10.41,0,0,0,3.66-2.53,12.82,12.82,0,0,0,2.55-4.11,15.06,15.06,0,0,0,1-5.6v-.09q0-.2,0-.4a.23.23,0,0,1,.41-.15,6.8,6.8,0,0,0,1,.95,9.58,9.58,0,0,0,2.43,1.42,26.86,26.86,0,0,0,2.67.92l2,.61a17,17,0,0,1,1.68.59,3.57,3.57,0,0,1,1.16.73,1.36,1.36,0,0,1,.43,1v.09a1.61,1.61,0,0,1-.73,1.37,4,4,0,0,1-2.29.52,11.2,11.2,0,0,1-3.85-.76,26.56,26.56,0,0,1-3.55-1.9.64.64,0,0,0-.91.36c-.09.26-.18.51-.28.76A15.15,15.15,0,0,1,102,37.49a.93.93,0,0,0,.29,1.31,29.08,29.08,0,0,0,4.06,2,15.94,15.94,0,0,0,5.51.92,14.07,14.07,0,0,0,3.8-.5,9.27,9.27,0,0,0,3.1-1.49,6.73,6.73,0,0,0,2.06-2.53,8.44,8.44,0,0,0,.73-3.66V33.5a5.86,5.86,0,0,0-.71-3,7.14,7.14,0,0,0-1.8-2.08A11.08,11.08,0,0,0,116.58,27q-1.37-.59-2.69-1-1-.33-2-.66a15.07,15.07,0,0,1-1.63-.69,4.71,4.71,0,0,1-1.13-.76,1.24,1.24,0,0,1-.43-.92v-.09a1.51,1.51,0,0,1,.66-1.25,3.29,3.29,0,0,1,2-.5,9.63,9.63,0,0,1,3.17.64c1.12.4,2.08.79,2.68,1.06a1,1,0,0,0,1.2-.29l.71-.87a.26.26,0,0,1,.44.07L127.12,41a.81.81,0,0,1-.06.71,2.79,2.79,0,0,1-.82.94,2.71,2.71,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1-.4a1,1,0,0,0-1.32.59l-1.29,3.5a1,1,0,0,0,.48,1.19,18.65,18.65,0,0,0,2.11.89,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2A19.65,19.65,0,0,0,134,41.91l9.47-25.24A.53.53,0,0,0,143,16ZM90.89,35.52c-3.24.28-6.14-2.6-6.48-6.45s2-7.19,5.26-7.47,6.14,2.6,6.48,6.45S94.13,35.24,90.89,35.52Z"></path>
+              </g>
+            </svg>
+          </span>
+          <h4>POWER</h4>
+          <p>Duis expedita sit harum excepturi soluta error cum impedit ut placeat incididunt eum enim optio et libero vero
+            duis error</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="logo-content px-lg-5">
+          <span class="logo my-5">
+            <svg fill="#ff0055" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 144 49" style="vertical-align: middle;">
+              <g>
+                <title>Typsy</title>
+                <path class="cls-1" d="M28.79,0a5.3,5.3,0,0,0-5.3,5.3v8a5.3,5.3,0,0,0-6.18,1.08,5.3,5.3,0,0,0-9.09,3.06A5.3,5.3,0,0,0,.52,22.21v10a16.78,16.78,0,0,0,33.57,0V5.3A5.3,5.3,0,0,0,28.79,0ZM26.43,5.3a2.36,2.36,0,0,1,4.71,0h0V20.5a9.1,9.1,0,0,0-4.71-2.3V5.3Zm-5.3,10.43a2.36,2.36,0,0,1,2.36,2.36H18.78A2.36,2.36,0,0,1,21.13,15.73ZM23.49,31a2.36,2.36,0,0,1-4.64.59h-.11a5.35,5.35,0,0,0,0-.59V28.68h2.36A2.36,2.36,0,0,1,23.49,31Zm-12.37-13a2.36,2.36,0,0,1,4.71,0h0V19a5.3,5.3,0,0,0,0,8.81V31h0a2.36,2.36,0,0,1-4.71,0ZM3.47,22.21a2.36,2.36,0,1,1,4.71,0h0v4.71h0a2.36,2.36,0,1,1-4.71,0Zm27.68,10h0a13.84,13.84,0,0,1-27.68,0v-.55a5.3,5.3,0,0,0,4.75,0,5.3,5.3,0,0,0,9.09,3.06,5.3,5.3,0,1,0,3.83-9H18.78a2.36,2.36,0,0,1,0-4.71H25a6.18,6.18,0,0,1,6.18,6.18Z"></path>
+                <path class="cls-1" d="M143,16h-5.67a1.43,1.43,0,0,0-1.36,1l-5,15.46a.28.28,0,0,1-.52,0l-5.2-15.56A1.31,1.31,0,0,0,124,16h-6a.48.48,0,0,0-.45.65.09.09,0,0,1-.12.12q-.52-.2-1.06-.37a16.26,16.26,0,0,0-4.89-.78,12.17,12.17,0,0,0-3.62.52A8.44,8.44,0,0,0,105,17.66a7.62,7.62,0,0,0-2,2.53A6.94,6.94,0,0,0,102.4,22,.23.23,0,0,1,102,22a12.12,12.12,0,0,0-2.17-3.18,10.64,10.64,0,0,0-3.69-2.53,11.26,11.26,0,0,0-4.3-.85,8.78,8.78,0,0,0-4.7,1.16A11.33,11.33,0,0,0,84.4,19a.27.27,0,0,1-.48-.18v-2A.9.9,0,0,0,83,16H71.76a1.48,1.48,0,0,0-1.41,1L65.41,32.41a.27.27,0,0,1-.52,0L59.73,17a1.5,1.5,0,0,0-1.42-1H49.07a.61.61,0,0,1-.61-.61V10.25a.52.52,0,0,0-.71-.49l-5.57,2.13a1.19,1.19,0,0,0-.9,1c0,.42,0,1.79,0,2.55V34.11a10.5,10.5,0,0,0,.54,3.66,6,6,0,0,0,1.51,2.34,5.34,5.34,0,0,0,2.32,1.25,11.8,11.8,0,0,0,3,.35,11.28,11.28,0,0,0,3.17-.4,7.8,7.8,0,0,0,1.9-.77,2.18,2.18,0,0,0,.87-1l.85-2.25L56,35.85a.78.78,0,0,0-.75-1l-.15,0a22,22,0,0,1-4.3.54q-2.32,0-2.32-2.46V22.64A.54.54,0,0,1,49,22.1h4.52a1,1,0,0,1,.88.6L61.56,41a.84.84,0,0,1-.06.74,2.77,2.77,0,0,1-.81.93,2.7,2.7,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1.11-.44a.85.85,0,0,0-1.13.52c-.27.81-.71,2.09-1.23,3.33a1.3,1.3,0,0,0,.64,1.67,13.82,13.82,0,0,0,1.77.69,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2,19.65,19.65,0,0,0,1.51-3.29L76.27,21a.24.24,0,0,1,.46.08V48.17a.69.69,0,0,0,.69.69h5.64a.86.86,0,0,0,.86-.86V38.67a.26.26,0,0,1,.45-.18,13,13,0,0,0,2.69,2.15,9,9,0,0,0,4.75,1.13,11.38,11.38,0,0,0,4.35-.85,10.41,10.41,0,0,0,3.66-2.53,12.82,12.82,0,0,0,2.55-4.11,15.06,15.06,0,0,0,1-5.6v-.09q0-.2,0-.4a.23.23,0,0,1,.41-.15,6.8,6.8,0,0,0,1,.95,9.58,9.58,0,0,0,2.43,1.42,26.86,26.86,0,0,0,2.67.92l2,.61a17,17,0,0,1,1.68.59,3.57,3.57,0,0,1,1.16.73,1.36,1.36,0,0,1,.43,1v.09a1.61,1.61,0,0,1-.73,1.37,4,4,0,0,1-2.29.52,11.2,11.2,0,0,1-3.85-.76,26.56,26.56,0,0,1-3.55-1.9.64.64,0,0,0-.91.36c-.09.26-.18.51-.28.76A15.15,15.15,0,0,1,102,37.49a.93.93,0,0,0,.29,1.31,29.08,29.08,0,0,0,4.06,2,15.94,15.94,0,0,0,5.51.92,14.07,14.07,0,0,0,3.8-.5,9.27,9.27,0,0,0,3.1-1.49,6.73,6.73,0,0,0,2.06-2.53,8.44,8.44,0,0,0,.73-3.66V33.5a5.86,5.86,0,0,0-.71-3,7.14,7.14,0,0,0-1.8-2.08A11.08,11.08,0,0,0,116.58,27q-1.37-.59-2.69-1-1-.33-2-.66a15.07,15.07,0,0,1-1.63-.69,4.71,4.71,0,0,1-1.13-.76,1.24,1.24,0,0,1-.43-.92v-.09a1.51,1.51,0,0,1,.66-1.25,3.29,3.29,0,0,1,2-.5,9.63,9.63,0,0,1,3.17.64c1.12.4,2.08.79,2.68,1.06a1,1,0,0,0,1.2-.29l.71-.87a.26.26,0,0,1,.44.07L127.12,41a.81.81,0,0,1-.06.71,2.79,2.79,0,0,1-.82.94,2.71,2.71,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1-.4a1,1,0,0,0-1.32.59l-1.29,3.5a1,1,0,0,0,.48,1.19,18.65,18.65,0,0,0,2.11.89,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2A19.65,19.65,0,0,0,134,41.91l9.47-25.24A.53.53,0,0,0,143,16ZM90.89,35.52c-3.24.28-6.14-2.6-6.48-6.45s2-7.19,5.26-7.47,6.14,2.6,6.48,6.45S94.13,35.24,90.89,35.52Z"></path>
+              </g>
+            </svg>
+          </span>
+          <h4>LOVE</h4>
+          <p>Duis expedita sit harum excepturi soluta error cum impedit ut placeat incididunt eum enim optio et libero vero
+            duis error</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="logo-content px-lg-5">
+          <span class="logo my-5">
+            <svg fill="#ff0055" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 144 49" style="vertical-align: middle;">
+              <g>
+                <title>Typsy</title>
+                <path class="cls-1" d="M28.79,0a5.3,5.3,0,0,0-5.3,5.3v8a5.3,5.3,0,0,0-6.18,1.08,5.3,5.3,0,0,0-9.09,3.06A5.3,5.3,0,0,0,.52,22.21v10a16.78,16.78,0,0,0,33.57,0V5.3A5.3,5.3,0,0,0,28.79,0ZM26.43,5.3a2.36,2.36,0,0,1,4.71,0h0V20.5a9.1,9.1,0,0,0-4.71-2.3V5.3Zm-5.3,10.43a2.36,2.36,0,0,1,2.36,2.36H18.78A2.36,2.36,0,0,1,21.13,15.73ZM23.49,31a2.36,2.36,0,0,1-4.64.59h-.11a5.35,5.35,0,0,0,0-.59V28.68h2.36A2.36,2.36,0,0,1,23.49,31Zm-12.37-13a2.36,2.36,0,0,1,4.71,0h0V19a5.3,5.3,0,0,0,0,8.81V31h0a2.36,2.36,0,0,1-4.71,0ZM3.47,22.21a2.36,2.36,0,1,1,4.71,0h0v4.71h0a2.36,2.36,0,1,1-4.71,0Zm27.68,10h0a13.84,13.84,0,0,1-27.68,0v-.55a5.3,5.3,0,0,0,4.75,0,5.3,5.3,0,0,0,9.09,3.06,5.3,5.3,0,1,0,3.83-9H18.78a2.36,2.36,0,0,1,0-4.71H25a6.18,6.18,0,0,1,6.18,6.18Z"></path>
+                <path class="cls-1" d="M143,16h-5.67a1.43,1.43,0,0,0-1.36,1l-5,15.46a.28.28,0,0,1-.52,0l-5.2-15.56A1.31,1.31,0,0,0,124,16h-6a.48.48,0,0,0-.45.65.09.09,0,0,1-.12.12q-.52-.2-1.06-.37a16.26,16.26,0,0,0-4.89-.78,12.17,12.17,0,0,0-3.62.52A8.44,8.44,0,0,0,105,17.66a7.62,7.62,0,0,0-2,2.53A6.94,6.94,0,0,0,102.4,22,.23.23,0,0,1,102,22a12.12,12.12,0,0,0-2.17-3.18,10.64,10.64,0,0,0-3.69-2.53,11.26,11.26,0,0,0-4.3-.85,8.78,8.78,0,0,0-4.7,1.16A11.33,11.33,0,0,0,84.4,19a.27.27,0,0,1-.48-.18v-2A.9.9,0,0,0,83,16H71.76a1.48,1.48,0,0,0-1.41,1L65.41,32.41a.27.27,0,0,1-.52,0L59.73,17a1.5,1.5,0,0,0-1.42-1H49.07a.61.61,0,0,1-.61-.61V10.25a.52.52,0,0,0-.71-.49l-5.57,2.13a1.19,1.19,0,0,0-.9,1c0,.42,0,1.79,0,2.55V34.11a10.5,10.5,0,0,0,.54,3.66,6,6,0,0,0,1.51,2.34,5.34,5.34,0,0,0,2.32,1.25,11.8,11.8,0,0,0,3,.35,11.28,11.28,0,0,0,3.17-.4,7.8,7.8,0,0,0,1.9-.77,2.18,2.18,0,0,0,.87-1l.85-2.25L56,35.85a.78.78,0,0,0-.75-1l-.15,0a22,22,0,0,1-4.3.54q-2.32,0-2.32-2.46V22.64A.54.54,0,0,1,49,22.1h4.52a1,1,0,0,1,.88.6L61.56,41a.84.84,0,0,1-.06.74,2.77,2.77,0,0,1-.81.93,2.7,2.7,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1.11-.44a.85.85,0,0,0-1.13.52c-.27.81-.71,2.09-1.23,3.33a1.3,1.3,0,0,0,.64,1.67,13.82,13.82,0,0,0,1.77.69,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2,19.65,19.65,0,0,0,1.51-3.29L76.27,21a.24.24,0,0,1,.46.08V48.17a.69.69,0,0,0,.69.69h5.64a.86.86,0,0,0,.86-.86V38.67a.26.26,0,0,1,.45-.18,13,13,0,0,0,2.69,2.15,9,9,0,0,0,4.75,1.13,11.38,11.38,0,0,0,4.35-.85,10.41,10.41,0,0,0,3.66-2.53,12.82,12.82,0,0,0,2.55-4.11,15.06,15.06,0,0,0,1-5.6v-.09q0-.2,0-.4a.23.23,0,0,1,.41-.15,6.8,6.8,0,0,0,1,.95,9.58,9.58,0,0,0,2.43,1.42,26.86,26.86,0,0,0,2.67.92l2,.61a17,17,0,0,1,1.68.59,3.57,3.57,0,0,1,1.16.73,1.36,1.36,0,0,1,.43,1v.09a1.61,1.61,0,0,1-.73,1.37,4,4,0,0,1-2.29.52,11.2,11.2,0,0,1-3.85-.76,26.56,26.56,0,0,1-3.55-1.9.64.64,0,0,0-.91.36c-.09.26-.18.51-.28.76A15.15,15.15,0,0,1,102,37.49a.93.93,0,0,0,.29,1.31,29.08,29.08,0,0,0,4.06,2,15.94,15.94,0,0,0,5.51.92,14.07,14.07,0,0,0,3.8-.5,9.27,9.27,0,0,0,3.1-1.49,6.73,6.73,0,0,0,2.06-2.53,8.44,8.44,0,0,0,.73-3.66V33.5a5.86,5.86,0,0,0-.71-3,7.14,7.14,0,0,0-1.8-2.08A11.08,11.08,0,0,0,116.58,27q-1.37-.59-2.69-1-1-.33-2-.66a15.07,15.07,0,0,1-1.63-.69,4.71,4.71,0,0,1-1.13-.76,1.24,1.24,0,0,1-.43-.92v-.09a1.51,1.51,0,0,1,.66-1.25,3.29,3.29,0,0,1,2-.5,9.63,9.63,0,0,1,3.17.64c1.12.4,2.08.79,2.68,1.06a1,1,0,0,0,1.2-.29l.71-.87a.26.26,0,0,1,.44.07L127.12,41a.81.81,0,0,1-.06.71,2.79,2.79,0,0,1-.82.94,2.71,2.71,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1-.4a1,1,0,0,0-1.32.59l-1.29,3.5a1,1,0,0,0,.48,1.19,18.65,18.65,0,0,0,2.11.89,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2A19.65,19.65,0,0,0,134,41.91l9.47-25.24A.53.53,0,0,0,143,16ZM90.89,35.52c-3.24.28-6.14-2.6-6.48-6.45s2-7.19,5.26-7.47,6.14,2.6,6.48,6.45S94.13,35.24,90.89,35.52Z"></path>
+              </g>
+            </svg>
+          </span>
+          <h4>JOB DONE</h4>
+          <p>Duis expedita sit harum excepturi soluta error cum impedit ut placeat incididunt eum enim optio et libero vero
+            duis error</p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row padding">
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="logo-content px-lg-5">
+          <span class="logo my-5">
+            <svg fill="#ff0055" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 144 49" style="vertical-align: middle;">
+              <g>
+                <title>Typsy</title>
+                <path class="cls-1" d="M28.79,0a5.3,5.3,0,0,0-5.3,5.3v8a5.3,5.3,0,0,0-6.18,1.08,5.3,5.3,0,0,0-9.09,3.06A5.3,5.3,0,0,0,.52,22.21v10a16.78,16.78,0,0,0,33.57,0V5.3A5.3,5.3,0,0,0,28.79,0ZM26.43,5.3a2.36,2.36,0,0,1,4.71,0h0V20.5a9.1,9.1,0,0,0-4.71-2.3V5.3Zm-5.3,10.43a2.36,2.36,0,0,1,2.36,2.36H18.78A2.36,2.36,0,0,1,21.13,15.73ZM23.49,31a2.36,2.36,0,0,1-4.64.59h-.11a5.35,5.35,0,0,0,0-.59V28.68h2.36A2.36,2.36,0,0,1,23.49,31Zm-12.37-13a2.36,2.36,0,0,1,4.71,0h0V19a5.3,5.3,0,0,0,0,8.81V31h0a2.36,2.36,0,0,1-4.71,0ZM3.47,22.21a2.36,2.36,0,1,1,4.71,0h0v4.71h0a2.36,2.36,0,1,1-4.71,0Zm27.68,10h0a13.84,13.84,0,0,1-27.68,0v-.55a5.3,5.3,0,0,0,4.75,0,5.3,5.3,0,0,0,9.09,3.06,5.3,5.3,0,1,0,3.83-9H18.78a2.36,2.36,0,0,1,0-4.71H25a6.18,6.18,0,0,1,6.18,6.18Z"></path>
+                <path class="cls-1" d="M143,16h-5.67a1.43,1.43,0,0,0-1.36,1l-5,15.46a.28.28,0,0,1-.52,0l-5.2-15.56A1.31,1.31,0,0,0,124,16h-6a.48.48,0,0,0-.45.65.09.09,0,0,1-.12.12q-.52-.2-1.06-.37a16.26,16.26,0,0,0-4.89-.78,12.17,12.17,0,0,0-3.62.52A8.44,8.44,0,0,0,105,17.66a7.62,7.62,0,0,0-2,2.53A6.94,6.94,0,0,0,102.4,22,.23.23,0,0,1,102,22a12.12,12.12,0,0,0-2.17-3.18,10.64,10.64,0,0,0-3.69-2.53,11.26,11.26,0,0,0-4.3-.85,8.78,8.78,0,0,0-4.7,1.16A11.33,11.33,0,0,0,84.4,19a.27.27,0,0,1-.48-.18v-2A.9.9,0,0,0,83,16H71.76a1.48,1.48,0,0,0-1.41,1L65.41,32.41a.27.27,0,0,1-.52,0L59.73,17a1.5,1.5,0,0,0-1.42-1H49.07a.61.61,0,0,1-.61-.61V10.25a.52.52,0,0,0-.71-.49l-5.57,2.13a1.19,1.19,0,0,0-.9,1c0,.42,0,1.79,0,2.55V34.11a10.5,10.5,0,0,0,.54,3.66,6,6,0,0,0,1.51,2.34,5.34,5.34,0,0,0,2.32,1.25,11.8,11.8,0,0,0,3,.35,11.28,11.28,0,0,0,3.17-.4,7.8,7.8,0,0,0,1.9-.77,2.18,2.18,0,0,0,.87-1l.85-2.25L56,35.85a.78.78,0,0,0-.75-1l-.15,0a22,22,0,0,1-4.3.54q-2.32,0-2.32-2.46V22.64A.54.54,0,0,1,49,22.1h4.52a1,1,0,0,1,.88.6L61.56,41a.84.84,0,0,1-.06.74,2.77,2.77,0,0,1-.81.93,2.7,2.7,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1.11-.44a.85.85,0,0,0-1.13.52c-.27.81-.71,2.09-1.23,3.33a1.3,1.3,0,0,0,.64,1.67,13.82,13.82,0,0,0,1.77.69,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2,19.65,19.65,0,0,0,1.51-3.29L76.27,21a.24.24,0,0,1,.46.08V48.17a.69.69,0,0,0,.69.69h5.64a.86.86,0,0,0,.86-.86V38.67a.26.26,0,0,1,.45-.18,13,13,0,0,0,2.69,2.15,9,9,0,0,0,4.75,1.13,11.38,11.38,0,0,0,4.35-.85,10.41,10.41,0,0,0,3.66-2.53,12.82,12.82,0,0,0,2.55-4.11,15.06,15.06,0,0,0,1-5.6v-.09q0-.2,0-.4a.23.23,0,0,1,.41-.15,6.8,6.8,0,0,0,1,.95,9.58,9.58,0,0,0,2.43,1.42,26.86,26.86,0,0,0,2.67.92l2,.61a17,17,0,0,1,1.68.59,3.57,3.57,0,0,1,1.16.73,1.36,1.36,0,0,1,.43,1v.09a1.61,1.61,0,0,1-.73,1.37,4,4,0,0,1-2.29.52,11.2,11.2,0,0,1-3.85-.76,26.56,26.56,0,0,1-3.55-1.9.64.64,0,0,0-.91.36c-.09.26-.18.51-.28.76A15.15,15.15,0,0,1,102,37.49a.93.93,0,0,0,.29,1.31,29.08,29.08,0,0,0,4.06,2,15.94,15.94,0,0,0,5.51.92,14.07,14.07,0,0,0,3.8-.5,9.27,9.27,0,0,0,3.1-1.49,6.73,6.73,0,0,0,2.06-2.53,8.44,8.44,0,0,0,.73-3.66V33.5a5.86,5.86,0,0,0-.71-3,7.14,7.14,0,0,0-1.8-2.08A11.08,11.08,0,0,0,116.58,27q-1.37-.59-2.69-1-1-.33-2-.66a15.07,15.07,0,0,1-1.63-.69,4.71,4.71,0,0,1-1.13-.76,1.24,1.24,0,0,1-.43-.92v-.09a1.51,1.51,0,0,1,.66-1.25,3.29,3.29,0,0,1,2-.5,9.63,9.63,0,0,1,3.17.64c1.12.4,2.08.79,2.68,1.06a1,1,0,0,0,1.2-.29l.71-.87a.26.26,0,0,1,.44.07L127.12,41a.81.81,0,0,1-.06.71,2.79,2.79,0,0,1-.82.94,2.71,2.71,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1-.4a1,1,0,0,0-1.32.59l-1.29,3.5a1,1,0,0,0,.48,1.19,18.65,18.65,0,0,0,2.11.89,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2A19.65,19.65,0,0,0,134,41.91l9.47-25.24A.53.53,0,0,0,143,16ZM90.89,35.52c-3.24.28-6.14-2.6-6.48-6.45s2-7.19,5.26-7.47,6.14,2.6,6.48,6.45S94.13,35.24,90.89,35.52Z"></path>
+              </g>
+            </svg>
+          </span>
+          <h4>GREEN</h4>
+          <p>Lorem ipsum dolor sit amet..</p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="logo-content px-lg-5">
+          <span class="logo my-5">
+            <svg fill="#ff0055" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 144 49" style="vertical-align: middle;">
+              <g>
+                <title>Typsy</title>
+                <path class="cls-1" d="M28.79,0a5.3,5.3,0,0,0-5.3,5.3v8a5.3,5.3,0,0,0-6.18,1.08,5.3,5.3,0,0,0-9.09,3.06A5.3,5.3,0,0,0,.52,22.21v10a16.78,16.78,0,0,0,33.57,0V5.3A5.3,5.3,0,0,0,28.79,0ZM26.43,5.3a2.36,2.36,0,0,1,4.71,0h0V20.5a9.1,9.1,0,0,0-4.71-2.3V5.3Zm-5.3,10.43a2.36,2.36,0,0,1,2.36,2.36H18.78A2.36,2.36,0,0,1,21.13,15.73ZM23.49,31a2.36,2.36,0,0,1-4.64.59h-.11a5.35,5.35,0,0,0,0-.59V28.68h2.36A2.36,2.36,0,0,1,23.49,31Zm-12.37-13a2.36,2.36,0,0,1,4.71,0h0V19a5.3,5.3,0,0,0,0,8.81V31h0a2.36,2.36,0,0,1-4.71,0ZM3.47,22.21a2.36,2.36,0,1,1,4.71,0h0v4.71h0a2.36,2.36,0,1,1-4.71,0Zm27.68,10h0a13.84,13.84,0,0,1-27.68,0v-.55a5.3,5.3,0,0,0,4.75,0,5.3,5.3,0,0,0,9.09,3.06,5.3,5.3,0,1,0,3.83-9H18.78a2.36,2.36,0,0,1,0-4.71H25a6.18,6.18,0,0,1,6.18,6.18Z"></path>
+                <path class="cls-1" d="M143,16h-5.67a1.43,1.43,0,0,0-1.36,1l-5,15.46a.28.28,0,0,1-.52,0l-5.2-15.56A1.31,1.31,0,0,0,124,16h-6a.48.48,0,0,0-.45.65.09.09,0,0,1-.12.12q-.52-.2-1.06-.37a16.26,16.26,0,0,0-4.89-.78,12.17,12.17,0,0,0-3.62.52A8.44,8.44,0,0,0,105,17.66a7.62,7.62,0,0,0-2,2.53A6.94,6.94,0,0,0,102.4,22,.23.23,0,0,1,102,22a12.12,12.12,0,0,0-2.17-3.18,10.64,10.64,0,0,0-3.69-2.53,11.26,11.26,0,0,0-4.3-.85,8.78,8.78,0,0,0-4.7,1.16A11.33,11.33,0,0,0,84.4,19a.27.27,0,0,1-.48-.18v-2A.9.9,0,0,0,83,16H71.76a1.48,1.48,0,0,0-1.41,1L65.41,32.41a.27.27,0,0,1-.52,0L59.73,17a1.5,1.5,0,0,0-1.42-1H49.07a.61.61,0,0,1-.61-.61V10.25a.52.52,0,0,0-.71-.49l-5.57,2.13a1.19,1.19,0,0,0-.9,1c0,.42,0,1.79,0,2.55V34.11a10.5,10.5,0,0,0,.54,3.66,6,6,0,0,0,1.51,2.34,5.34,5.34,0,0,0,2.32,1.25,11.8,11.8,0,0,0,3,.35,11.28,11.28,0,0,0,3.17-.4,7.8,7.8,0,0,0,1.9-.77,2.18,2.18,0,0,0,.87-1l.85-2.25L56,35.85a.78.78,0,0,0-.75-1l-.15,0a22,22,0,0,1-4.3.54q-2.32,0-2.32-2.46V22.64A.54.54,0,0,1,49,22.1h4.52a1,1,0,0,1,.88.6L61.56,41a.84.84,0,0,1-.06.74,2.77,2.77,0,0,1-.81.93,2.7,2.7,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1.11-.44a.85.85,0,0,0-1.13.52c-.27.81-.71,2.09-1.23,3.33a1.3,1.3,0,0,0,.64,1.67,13.82,13.82,0,0,0,1.77.69,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2,19.65,19.65,0,0,0,1.51-3.29L76.27,21a.24.24,0,0,1,.46.08V48.17a.69.69,0,0,0,.69.69h5.64a.86.86,0,0,0,.86-.86V38.67a.26.26,0,0,1,.45-.18,13,13,0,0,0,2.69,2.15,9,9,0,0,0,4.75,1.13,11.38,11.38,0,0,0,4.35-.85,10.41,10.41,0,0,0,3.66-2.53,12.82,12.82,0,0,0,2.55-4.11,15.06,15.06,0,0,0,1-5.6v-.09q0-.2,0-.4a.23.23,0,0,1,.41-.15,6.8,6.8,0,0,0,1,.95,9.58,9.58,0,0,0,2.43,1.42,26.86,26.86,0,0,0,2.67.92l2,.61a17,17,0,0,1,1.68.59,3.57,3.57,0,0,1,1.16.73,1.36,1.36,0,0,1,.43,1v.09a1.61,1.61,0,0,1-.73,1.37,4,4,0,0,1-2.29.52,11.2,11.2,0,0,1-3.85-.76,26.56,26.56,0,0,1-3.55-1.9.64.64,0,0,0-.91.36c-.09.26-.18.51-.28.76A15.15,15.15,0,0,1,102,37.49a.93.93,0,0,0,.29,1.31,29.08,29.08,0,0,0,4.06,2,15.94,15.94,0,0,0,5.51.92,14.07,14.07,0,0,0,3.8-.5,9.27,9.27,0,0,0,3.1-1.49,6.73,6.73,0,0,0,2.06-2.53,8.44,8.44,0,0,0,.73-3.66V33.5a5.86,5.86,0,0,0-.71-3,7.14,7.14,0,0,0-1.8-2.08A11.08,11.08,0,0,0,116.58,27q-1.37-.59-2.69-1-1-.33-2-.66a15.07,15.07,0,0,1-1.63-.69,4.71,4.71,0,0,1-1.13-.76,1.24,1.24,0,0,1-.43-.92v-.09a1.51,1.51,0,0,1,.66-1.25,3.29,3.29,0,0,1,2-.5,9.63,9.63,0,0,1,3.17.64c1.12.4,2.08.79,2.68,1.06a1,1,0,0,0,1.2-.29l.71-.87a.26.26,0,0,1,.44.07L127.12,41a.81.81,0,0,1-.06.71,2.79,2.79,0,0,1-.82.94,2.71,2.71,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1-.4a1,1,0,0,0-1.32.59l-1.29,3.5a1,1,0,0,0,.48,1.19,18.65,18.65,0,0,0,2.11.89,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2A19.65,19.65,0,0,0,134,41.91l9.47-25.24A.53.53,0,0,0,143,16ZM90.89,35.52c-3.24.28-6.14-2.6-6.48-6.45s2-7.19,5.26-7.47,6.14,2.6,6.48,6.45S94.13,35.24,90.89,35.52Z"></path>
+              </g>
+            </svg>
+          </span>
+          <h4>CERTIFIED</h4>
+          <p>Duis expedita sit harum excepturi soluta error cum impedit ut placeat incididunt eum enim optio et libero vero
+            duis error</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="logo-content px-lg-5">
+          <span class="logo my-5">
+            <svg fill="#ff0055" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 144 49" style="vertical-align: middle;">
+              <g>
+                <title>Typsy</title>
+                <path class="cls-1" d="M28.79,0a5.3,5.3,0,0,0-5.3,5.3v8a5.3,5.3,0,0,0-6.18,1.08,5.3,5.3,0,0,0-9.09,3.06A5.3,5.3,0,0,0,.52,22.21v10a16.78,16.78,0,0,0,33.57,0V5.3A5.3,5.3,0,0,0,28.79,0ZM26.43,5.3a2.36,2.36,0,0,1,4.71,0h0V20.5a9.1,9.1,0,0,0-4.71-2.3V5.3Zm-5.3,10.43a2.36,2.36,0,0,1,2.36,2.36H18.78A2.36,2.36,0,0,1,21.13,15.73ZM23.49,31a2.36,2.36,0,0,1-4.64.59h-.11a5.35,5.35,0,0,0,0-.59V28.68h2.36A2.36,2.36,0,0,1,23.49,31Zm-12.37-13a2.36,2.36,0,0,1,4.71,0h0V19a5.3,5.3,0,0,0,0,8.81V31h0a2.36,2.36,0,0,1-4.71,0ZM3.47,22.21a2.36,2.36,0,1,1,4.71,0h0v4.71h0a2.36,2.36,0,1,1-4.71,0Zm27.68,10h0a13.84,13.84,0,0,1-27.68,0v-.55a5.3,5.3,0,0,0,4.75,0,5.3,5.3,0,0,0,9.09,3.06,5.3,5.3,0,1,0,3.83-9H18.78a2.36,2.36,0,0,1,0-4.71H25a6.18,6.18,0,0,1,6.18,6.18Z"></path>
+                <path class="cls-1" d="M143,16h-5.67a1.43,1.43,0,0,0-1.36,1l-5,15.46a.28.28,0,0,1-.52,0l-5.2-15.56A1.31,1.31,0,0,0,124,16h-6a.48.48,0,0,0-.45.65.09.09,0,0,1-.12.12q-.52-.2-1.06-.37a16.26,16.26,0,0,0-4.89-.78,12.17,12.17,0,0,0-3.62.52A8.44,8.44,0,0,0,105,17.66a7.62,7.62,0,0,0-2,2.53A6.94,6.94,0,0,0,102.4,22,.23.23,0,0,1,102,22a12.12,12.12,0,0,0-2.17-3.18,10.64,10.64,0,0,0-3.69-2.53,11.26,11.26,0,0,0-4.3-.85,8.78,8.78,0,0,0-4.7,1.16A11.33,11.33,0,0,0,84.4,19a.27.27,0,0,1-.48-.18v-2A.9.9,0,0,0,83,16H71.76a1.48,1.48,0,0,0-1.41,1L65.41,32.41a.27.27,0,0,1-.52,0L59.73,17a1.5,1.5,0,0,0-1.42-1H49.07a.61.61,0,0,1-.61-.61V10.25a.52.52,0,0,0-.71-.49l-5.57,2.13a1.19,1.19,0,0,0-.9,1c0,.42,0,1.79,0,2.55V34.11a10.5,10.5,0,0,0,.54,3.66,6,6,0,0,0,1.51,2.34,5.34,5.34,0,0,0,2.32,1.25,11.8,11.8,0,0,0,3,.35,11.28,11.28,0,0,0,3.17-.4,7.8,7.8,0,0,0,1.9-.77,2.18,2.18,0,0,0,.87-1l.85-2.25L56,35.85a.78.78,0,0,0-.75-1l-.15,0a22,22,0,0,1-4.3.54q-2.32,0-2.32-2.46V22.64A.54.54,0,0,1,49,22.1h4.52a1,1,0,0,1,.88.6L61.56,41a.84.84,0,0,1-.06.74,2.77,2.77,0,0,1-.81.93,2.7,2.7,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1.11-.44a.85.85,0,0,0-1.13.52c-.27.81-.71,2.09-1.23,3.33a1.3,1.3,0,0,0,.64,1.67,13.82,13.82,0,0,0,1.77.69,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2,19.65,19.65,0,0,0,1.51-3.29L76.27,21a.24.24,0,0,1,.46.08V48.17a.69.69,0,0,0,.69.69h5.64a.86.86,0,0,0,.86-.86V38.67a.26.26,0,0,1,.45-.18,13,13,0,0,0,2.69,2.15,9,9,0,0,0,4.75,1.13,11.38,11.38,0,0,0,4.35-.85,10.41,10.41,0,0,0,3.66-2.53,12.82,12.82,0,0,0,2.55-4.11,15.06,15.06,0,0,0,1-5.6v-.09q0-.2,0-.4a.23.23,0,0,1,.41-.15,6.8,6.8,0,0,0,1,.95,9.58,9.58,0,0,0,2.43,1.42,26.86,26.86,0,0,0,2.67.92l2,.61a17,17,0,0,1,1.68.59,3.57,3.57,0,0,1,1.16.73,1.36,1.36,0,0,1,.43,1v.09a1.61,1.61,0,0,1-.73,1.37,4,4,0,0,1-2.29.52,11.2,11.2,0,0,1-3.85-.76,26.56,26.56,0,0,1-3.55-1.9.64.64,0,0,0-.91.36c-.09.26-.18.51-.28.76A15.15,15.15,0,0,1,102,37.49a.93.93,0,0,0,.29,1.31,29.08,29.08,0,0,0,4.06,2,15.94,15.94,0,0,0,5.51.92,14.07,14.07,0,0,0,3.8-.5,9.27,9.27,0,0,0,3.1-1.49,6.73,6.73,0,0,0,2.06-2.53,8.44,8.44,0,0,0,.73-3.66V33.5a5.86,5.86,0,0,0-.71-3,7.14,7.14,0,0,0-1.8-2.08A11.08,11.08,0,0,0,116.58,27q-1.37-.59-2.69-1-1-.33-2-.66a15.07,15.07,0,0,1-1.63-.69,4.71,4.71,0,0,1-1.13-.76,1.24,1.24,0,0,1-.43-.92v-.09a1.51,1.51,0,0,1,.66-1.25,3.29,3.29,0,0,1,2-.5,9.63,9.63,0,0,1,3.17.64c1.12.4,2.08.79,2.68,1.06a1,1,0,0,0,1.2-.29l.71-.87a.26.26,0,0,1,.44.07L127.12,41a.81.81,0,0,1-.06.71,2.79,2.79,0,0,1-.82.94,2.71,2.71,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1-.4a1,1,0,0,0-1.32.59l-1.29,3.5a1,1,0,0,0,.48,1.19,18.65,18.65,0,0,0,2.11.89,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2A19.65,19.65,0,0,0,134,41.91l9.47-25.24A.53.53,0,0,0,143,16ZM90.89,35.52c-3.24.28-6.14-2.6-6.48-6.45s2-7.19,5.26-7.47,6.14,2.6,6.48,6.45S94.13,35.24,90.89,35.52Z"></path>
+              </g>
+            </svg>
+          </span>
+          <h4>HARD WORK</h4>
+          <p>Duis expedita sit harum excepturi soluta error cum impedit ut placeat incididunt eum enim optio et libero vero
+            duis error</p>
+          <div class="logo-content">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="container-fluid padding">
+    <div class="row padding">
+      <div class="col-xs-12 col-sm-12 col-md-6">
+        <div class="bg-typsy-teal float-right">
+          <blockquote class="blockquote text-left typsy-blue">
+            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Sed ut perspiciatis unde
+              voluptatem omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
+              ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae explicabo. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
+            <footer class="blockquote-footer">Jonathan Plowright,
+              <cite title="Source Title">Founder & CEO</cite>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6">
+        <img class="img-fluid rounded" src="https://typsy.blob.core.windows.net/general/picture2.JPG" alt="test" />
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid padding">
+    <div class="row padding">
+      <div class="col-xs-12 col-sm-12 col-md-3">
+        <div class="text_line_image">
+          <img class="img-fluid" src="https://typsy.blob.core.windows.net/general/Capture.JPG" alt="">
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-12 col-md-9" style="display: flex;flex-direction: column;justify-content: center;text-align: left;">
+
+        <h1 class="typsy-blue">Who are you and how can we help?</h1>
+        <p style="width:650px">Etiam nec odio vestibulum est mattis effic iturut magna. Pelle ntesque sit am et tellus blandit. Etiam nec odio vestibul.
+          Etiam nec odio vestibulum est mattis effic iturut.</p>
+        <a href="#">
+          <h5 class="typsy-red text-uppercase">Not sure which one? let us help you</h5>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid bg-typsy-blue">
+    <div class="row padding services-type text-white">
+      <div class="col-xs-12 col-sm-12 col-md-3">
+        <h4 class="text-uppercase">Individual</h4>
+        <p>I own or manager or train staff in one or many hospitality venues</p>
+        <p>Name, Location</p>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-3">
+        <h4 class="text-uppercase">Samll Businesss</h4>
+        <p>I own or manager or train staff in one or many hospitality venues</p>
+        <p>Name, Location</p>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-3">
+        <h4 class="text-uppercase">Large Business</h4>
+        <p>I own or manager or train staff in one or many hospitality venues</p>
+        <p>Name, Location</p>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-3">
+        <h4 class="text-uppercase">Academic</h4>
+        <p>I own or manager or train staff in one or many hospitality venues</p>
+        <p>Name, Location</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid padding" style="background-image:url('https://typsy.blob.core.windows.net/general/bgimage.jpg');background-repeat:no-repeat;background-position:top;background-size:cover; min-height:700px;">
+    <div class="row padding">
+      <div class="col-12 text-white text-center">
+        <div style="padding-top:300px">
+          <h1>Sign up for Typsy mail</h1>
+          <br />
+          <p>Have a frink with us and learn about Typsy updates, news, and events</p>
+          <br />
+          <a class="btn btn-outline-light btn-lg text-white" href="#">SIGN UP NOW</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="content-info">
+    <div class="footer-container">
+      <div class="ft-links">
+        <div class="row">
+          <div class="col-xs-4 col-md-3 ft-menu-toggle">
+            <h3 class="ft-nav-heading">Welcome</h3>
+            <ul class="ft-nav">
+              <li>
+                <a href="/individuals/">Individuals</a>
+              </li>
+              <li>
+                <a href="/business/">Single Venue</a>
+              </li>
+              <li>
+                <a href="/business/multi-venue">Multi Venue</a>
+              </li>
+              <li>
+                <a href="/business/corporate">Corporate</a>
+              </li>
+              <li>
+                <a href="/academics/">Academic</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xs-4 col-md-3 ft-menu-toggle">
+            <h3 class="ft-nav-heading">Learning</h3>
+            <ul class="ft-nav">
+              <li>
+                <a href="/discover/?type=lessons">Lessons</a>
+              </li>
+              <li>
+                <a href="/discover/?type=courses">Courses</a>
+              </li>
+              <li>
+                <a href="/discover/?category=mentor sessions">Mentor Sessions</a>
+              </li>
+              <li>
+                <a href="/instructors/">Instructors</a>
+              </li>
+              <li>
+                <a href="/custom-content/">Custom Content</a>
+              </li>
+              <li>
+                <a href="/integrations/">Integrations</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xs-4 col-md-3 ft-menu-toggle">
+            <h3 class="ft-nav-heading">Typsy</h3>
+            <ul class="ft-nav">
+              <li>
+                <a href="/contact-us/">Contact Us</a>
+              </li>
+              <li>
+                <a href="/ambassadors/">Ambassadors</a>
+              </li>
+              <li>
+                <a href="/partners/">Partnerships</a>
+              </li>
+              <li>
+                <a href="http://blog.typsy.com">Blog</a>
+              </li>
+              <li>
+                <a href="http://info.typsy.com/typsy-newsletters">Newsletter</a>
+              </li>
+              <li>
+                <a href="/events/">Events</a>
+              </li>
+              <li id="refer-a-friend-footer">
+                <a href="#" data-mbsy-integration="3525">Refer a Friend</a>
+              </li>
+              <li>
+                <a href="/competition/">Competition</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-3 col-md-3">
+            <h3 class="ft-nav-heading">Download the app</h3>
+            <a class="play-store" href="https://play.google.com/store/apps/details?id=com.typsy.app">Download on Google play store</a>
+            <a class="ios-store" href="https://itunes.apple.com/us/app/typsy/id1094052825?mt=8">iOS Store</a>
+          </div>
+        </div>
+      </div>
+      <div class="ft-copy">
+        <div class="row">
+          <div class="col-sm-2 col-md-2">
+            <a class="ft-brand" href="/">Typsy</a>
+          </div>
+          <div class="col-sm-6 col-md-7 text-center">
+            <ul class="ft-btm-links">
+              <li>
+                <a asp-controller="Content" asp-action="PrivacyPolicy">Privacy</a>
+              </li>
+              <li>
+                <a asp-controller="Content" asp-action="Term">Terms</a>
+              </li>
+              <li>
+                Copyright Typsy&nbsp;2018. &nbsp; All rights reserved
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-4 col-md-3 text-lg-right">
+            <div class="social__social___2CweB">
+              <ul>
+                <li>
+                  <a href="http://www.twitter.com/asktypsy" target="_blank">
+                    <svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 20 20" class="social__icon___2V45V"
+                      style="vertical-align: middle;">
+                      <g>
+                        <title>twitter</title>
+                        <path class="cls-1" d="M20,3.73a8.17,8.17,0,0,1-2.36.65,4.16,4.16,0,0,0,1.81-2.3,8.2,8.2,0,0,1-2.61,1,4.09,4.09,0,0,0-3-1.31,4.14,4.14,0,0,0-4,5.1A11.64,11.64,0,0,1,1.37,2.54,4.18,4.18,0,0,0,2.65,8.08,4.06,4.06,0,0,1,.78,7.56a4.15,4.15,0,0,0,3.3,4.12,4.07,4.07,0,0,1-1.86.07,4.12,4.12,0,0,0,3.84,2.88A8.21,8.21,0,0,1,0,16.36a11.57,11.57,0,0,0,6.3,1.86A11.7,11.7,0,0,0,18,5.87,8.4,8.4,0,0,0,20,3.73Z"></path>
+                      </g>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.instagram.com/asktypsy" target="_blank">
+                    <svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 20 20" class="social__icon___2V45V"
+                      style="vertical-align: middle;">
+                      <g>
+                        <path class="cls-1" d="M18.63,6.47a6.19,6.19,0,0,0-.4-2.08,4.18,4.18,0,0,0-1-1.51,4.26,4.26,0,0,0-1.54-1,6.46,6.46,0,0,0-2.11-.4c-.93,0-1.22-.05-3.58-.05s-2.65,0-3.58.05a6.46,6.46,0,0,0-2.11.4,4.26,4.26,0,0,0-1.54,1,4.18,4.18,0,0,0-1,1.51,6.19,6.19,0,0,0-.4,2.08c0,.91-.05,1.2-.05,3.53s0,2.61.05,3.53a6.19,6.19,0,0,0,.4,2.08,4.19,4.19,0,0,0,1,1.51,4.26,4.26,0,0,0,1.54,1,6.46,6.46,0,0,0,2.11.4c.93,0,1.22.05,3.58.05s2.65,0,3.58-.05a6.46,6.46,0,0,0,2.11-.4,4.26,4.26,0,0,0,1.54-1,4.19,4.19,0,0,0,1-1.51,6.19,6.19,0,0,0,.4-2.08c0-.91.05-1.2.05-3.53S18.67,7.39,18.63,6.47Zm-1.56,7a4.67,4.67,0,0,1-.3,1.59,2.64,2.64,0,0,1-.65,1,2.69,2.69,0,0,1-1,.64,4.88,4.88,0,0,1-1.61.29c-.92,0-1.19.05-3.51.05S7.41,17,6.49,17a4.88,4.88,0,0,1-1.61-.29,2.69,2.69,0,0,1-1-.64,2.64,2.64,0,0,1-.65-1,4.67,4.67,0,0,1-.3-1.59c0-.9-.05-1.17-.05-3.45s0-2.55.05-3.46A4.67,4.67,0,0,1,3.23,5a2.64,2.64,0,0,1,.65-1,2.7,2.7,0,0,1,1-.64A4.88,4.88,0,0,1,6.49,3C7.41,3,7.68,3,10,3s2.59,0,3.51.05a4.88,4.88,0,0,1,1.61.29,2.7,2.7,0,0,1,1,.64,2.64,2.64,0,0,1,.65,1,4.67,4.67,0,0,1,.3,1.59c0,.9.05,1.17.05,3.46S17.11,12.55,17.07,13.45ZM10,5.61A4.39,4.39,0,1,0,14.46,10,4.42,4.42,0,0,0,10,5.61Zm0,7.24A2.85,2.85,0,1,1,12.89,10,2.87,2.87,0,0,1,10,12.85Zm4.64-8.44a1,1,0,1,0,1,1A1,1,0,0,0,14.64,4.41Z"></path>
+                      </g>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.facebook.com/asktypsy" target="_blank">
+                    <svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 20 20" class="social__icon___2V45V"
+                      style="vertical-align: middle;">
+                      <g>
+                        <title>facebook</title>
+                        <path class="cls-1" d="M7.81,7.15H6V10H7.81v8.26h3.5V9.93h2.44L14,7.15h-2.7V5.57c0-.65.14-.91.81-.91H14V1.78H11.59C9,1.78,7.81,2.86,7.81,4.94Z"></path>
+                      </g>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://snapchat.com/add/asktypsy" target="_blank">
+                    <svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 18.7 17.1" class="social__icon___2V45V"
+                      style="vertical-align: middle;">
+                      <g>
+                        <title>snapchat</title>
+                        <path class="cls-1" d="M10.12,18.55H9.88a4.22,4.22,0,0,1-2.52-1,3.67,3.67,0,0,0-1.44-.71,4.75,4.75,0,0,0-.76-.06,5.32,5.32,0,0,0-1,.12,2.38,2.38,0,0,1-.4.06.27.27,0,0,1-.3-.21c0-.15-.08-.29-.11-.42-.08-.34-.13-.55-.26-.57-1.4-.21-2.22-.52-2.39-.89a.34.34,0,0,1,0-.12.22.22,0,0,1,.19-.23,4.91,4.91,0,0,0,2.93-1.7,6.36,6.36,0,0,0,1-1.51h0a1,1,0,0,0,.1-.82c-.18-.41-.78-.6-1.17-.72L3.43,9.7c-.35-.13-.92-.42-.85-.81a.78.78,0,0,1,.76-.48.55.55,0,0,1,.23,0,2.34,2.34,0,0,0,.95.24.81.81,0,0,0,.55-.16q0-.27,0-.54a9,9,0,0,1,.23-3.67A4.92,4.92,0,0,1,9.81,1.45h.38a4.93,4.93,0,0,1,4.56,2.86A9,9,0,0,1,15,8V8c0,.17,0,.33,0,.48a.78.78,0,0,0,.5.16,2.42,2.42,0,0,0,.89-.24.73.73,0,0,1,.29-.06.89.89,0,0,1,.33.06h0a.61.61,0,0,1,.47.49c0,.19-.14.47-.85.75l-.26.09c-.39.12-1,.31-1.17.72a1,1,0,0,0,.1.82h0a5.72,5.72,0,0,0,3.93,3.21.22.22,0,0,1,.19.23.35.35,0,0,1,0,.12c-.16.37-1,.68-2.39.89-.13,0-.19.23-.26.56,0,.14-.06.28-.11.42a.26.26,0,0,1-.28.2h0a2.3,2.3,0,0,1-.4,0,5.32,5.32,0,0,0-1-.11,4.81,4.81,0,0,0-.76.06,3.67,3.67,0,0,0-1.43.71,4.22,4.22,0,0,1-2.52,1"
+                          transform="translate(-0.65 -1.45)"></path>
+                      </g>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/company/7953302/" target="_blank">
+                    <svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 26 26" class="social__icon___2V45V"
+                      style="vertical-align: middle;">
+                      <g>
+                        <title>LinkedIn</title>
+                        <path class="cls-1" d="M6.35,3.2A3.17,3.17,0,1,1,3.17,0,3.19,3.19,0,0,1,6.35,3.2ZM5.88,8.67H.52V26H5.88Zm8.58,0H9.32V26h5.15V16.9c0-2.44,1.12-3.89,3.27-3.89,2,0,2.92,1.39,2.92,3.89V26H26V15c0-4.64-2.63-6.89-6.31-6.89A6,6,0,0,0,14.46,11V8.67Z"></path>
+                      </g>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,567 @@
+@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+@using DevExtreme.AspNet.Data
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    <title>@ViewData["MetaTitle"]</title>
+    <meta name="description" content="@ViewData["MetaDescription"]" />
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/global.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/fonts.css">
+        <link rel="stylesheet" href="~/css/carousel.css">
+        <link rel="stylesheet" href="~/css/mobile.css">
+        <link rel="stylesheet" href="~/css/typsy.css">
+        <link href="~/Content/MvcGrid/mvc-grid.css" rel="stylesheet">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/global.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" asp-fallback-src="~/lib/jquery/dist/jquery.min.js" asp-fallback-test="window.jQuery" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link rel="icon" type="image/png" href="~/images/favicon-32x32.png" sizes="32x32" />
+
+    <!-- Dev Exteme javascript and CSS references -->
+    <link href="~/css/devextreme/dx.common.css" rel="stylesheet" />
+    <link href="~/css/devextreme/dx.light.css" rel="stylesheet" />
+
+    <script src="~/js/devextreme/cldr.js"></script>
+    <script src="~/js/devextreme/cldr/event.js"></script>
+    <script src="~/js/devextreme/cldr/supplemental.js"></script>
+    <script src="~/js/devextreme/cldr/unresolved.js"></script>
+
+    @*<script src="~/js/devextreme/globalize.js"></script>
+        <script src="~/js/devextreme/globalize/message.js"></script>
+        <script src="~/js/devextreme/globalize/number.js"></script>
+        <script src="~/js/devextreme/globalize/currency.js"></script>
+        <script src="~/js/devextreme/globalize/date.js"></script>*@
+
+    <!-- JSZip for client side export-->
+    <!-- <script src="~/js/devextreme/jszip.js"></script> -->
+
+    <script src="~/js/devextreme/dx.all.js"></script>
+    @*<script src="~/js/devextreme/vectormap-data/world.js"></script>*@
+    <script src="~/lib/devextreme-aspnet-data/js/dx.aspnet.data.js"></script>
+    <script src="~/js/devextreme/aspnet/dx.aspnet.mvc.js"></script>
+
+    @Html.Raw(JavaScriptSnippet.FullScript)
+    @RenderSection("RecurlyJsScripts", required: false)
+
+
+    @RenderSection("SocialMediaShareMetaData", required: false)
+
+
+    @RenderSection("mapping", required: false)
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+            <a class="navbar-brand" href="/">
+                <span>
+                    <svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 144 49" style="vertical-align: middle;"><g><title>Typsy</title><path class="cls-1" d="M28.79,0a5.3,5.3,0,0,0-5.3,5.3v8a5.3,5.3,0,0,0-6.18,1.08,5.3,5.3,0,0,0-9.09,3.06A5.3,5.3,0,0,0,.52,22.21v10a16.78,16.78,0,0,0,33.57,0V5.3A5.3,5.3,0,0,0,28.79,0ZM26.43,5.3a2.36,2.36,0,0,1,4.71,0h0V20.5a9.1,9.1,0,0,0-4.71-2.3V5.3Zm-5.3,10.43a2.36,2.36,0,0,1,2.36,2.36H18.78A2.36,2.36,0,0,1,21.13,15.73ZM23.49,31a2.36,2.36,0,0,1-4.64.59h-.11a5.35,5.35,0,0,0,0-.59V28.68h2.36A2.36,2.36,0,0,1,23.49,31Zm-12.37-13a2.36,2.36,0,0,1,4.71,0h0V19a5.3,5.3,0,0,0,0,8.81V31h0a2.36,2.36,0,0,1-4.71,0ZM3.47,22.21a2.36,2.36,0,1,1,4.71,0h0v4.71h0a2.36,2.36,0,1,1-4.71,0Zm27.68,10h0a13.84,13.84,0,0,1-27.68,0v-.55a5.3,5.3,0,0,0,4.75,0,5.3,5.3,0,0,0,9.09,3.06,5.3,5.3,0,1,0,3.83-9H18.78a2.36,2.36,0,0,1,0-4.71H25a6.18,6.18,0,0,1,6.18,6.18Z"></path><path class="cls-1" d="M143,16h-5.67a1.43,1.43,0,0,0-1.36,1l-5,15.46a.28.28,0,0,1-.52,0l-5.2-15.56A1.31,1.31,0,0,0,124,16h-6a.48.48,0,0,0-.45.65.09.09,0,0,1-.12.12q-.52-.2-1.06-.37a16.26,16.26,0,0,0-4.89-.78,12.17,12.17,0,0,0-3.62.52A8.44,8.44,0,0,0,105,17.66a7.62,7.62,0,0,0-2,2.53A6.94,6.94,0,0,0,102.4,22,.23.23,0,0,1,102,22a12.12,12.12,0,0,0-2.17-3.18,10.64,10.64,0,0,0-3.69-2.53,11.26,11.26,0,0,0-4.3-.85,8.78,8.78,0,0,0-4.7,1.16A11.33,11.33,0,0,0,84.4,19a.27.27,0,0,1-.48-.18v-2A.9.9,0,0,0,83,16H71.76a1.48,1.48,0,0,0-1.41,1L65.41,32.41a.27.27,0,0,1-.52,0L59.73,17a1.5,1.5,0,0,0-1.42-1H49.07a.61.61,0,0,1-.61-.61V10.25a.52.52,0,0,0-.71-.49l-5.57,2.13a1.19,1.19,0,0,0-.9,1c0,.42,0,1.79,0,2.55V34.11a10.5,10.5,0,0,0,.54,3.66,6,6,0,0,0,1.51,2.34,5.34,5.34,0,0,0,2.32,1.25,11.8,11.8,0,0,0,3,.35,11.28,11.28,0,0,0,3.17-.4,7.8,7.8,0,0,0,1.9-.77,2.18,2.18,0,0,0,.87-1l.85-2.25L56,35.85a.78.78,0,0,0-.75-1l-.15,0a22,22,0,0,1-4.3.54q-2.32,0-2.32-2.46V22.64A.54.54,0,0,1,49,22.1h4.52a1,1,0,0,1,.88.6L61.56,41a.84.84,0,0,1-.06.74,2.77,2.77,0,0,1-.81.93,2.7,2.7,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1.11-.44a.85.85,0,0,0-1.13.52c-.27.81-.71,2.09-1.23,3.33a1.3,1.3,0,0,0,.64,1.67,13.82,13.82,0,0,0,1.77.69,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2,19.65,19.65,0,0,0,1.51-3.29L76.27,21a.24.24,0,0,1,.46.08V48.17a.69.69,0,0,0,.69.69h5.64a.86.86,0,0,0,.86-.86V38.67a.26.26,0,0,1,.45-.18,13,13,0,0,0,2.69,2.15,9,9,0,0,0,4.75,1.13,11.38,11.38,0,0,0,4.35-.85,10.41,10.41,0,0,0,3.66-2.53,12.82,12.82,0,0,0,2.55-4.11,15.06,15.06,0,0,0,1-5.6v-.09q0-.2,0-.4a.23.23,0,0,1,.41-.15,6.8,6.8,0,0,0,1,.95,9.58,9.58,0,0,0,2.43,1.42,26.86,26.86,0,0,0,2.67.92l2,.61a17,17,0,0,1,1.68.59,3.57,3.57,0,0,1,1.16.73,1.36,1.36,0,0,1,.43,1v.09a1.61,1.61,0,0,1-.73,1.37,4,4,0,0,1-2.29.52,11.2,11.2,0,0,1-3.85-.76,26.56,26.56,0,0,1-3.55-1.9.64.64,0,0,0-.91.36c-.09.26-.18.51-.28.76A15.15,15.15,0,0,1,102,37.49a.93.93,0,0,0,.29,1.31,29.08,29.08,0,0,0,4.06,2,15.94,15.94,0,0,0,5.51.92,14.07,14.07,0,0,0,3.8-.5,9.27,9.27,0,0,0,3.1-1.49,6.73,6.73,0,0,0,2.06-2.53,8.44,8.44,0,0,0,.73-3.66V33.5a5.86,5.86,0,0,0-.71-3,7.14,7.14,0,0,0-1.8-2.08A11.08,11.08,0,0,0,116.58,27q-1.37-.59-2.69-1-1-.33-2-.66a15.07,15.07,0,0,1-1.63-.69,4.71,4.71,0,0,1-1.13-.76,1.24,1.24,0,0,1-.43-.92v-.09a1.51,1.51,0,0,1,.66-1.25,3.29,3.29,0,0,1,2-.5,9.63,9.63,0,0,1,3.17.64c1.12.4,2.08.79,2.68,1.06a1,1,0,0,0,1.2-.29l.71-.87a.26.26,0,0,1,.44.07L127.12,41a.81.81,0,0,1-.06.71,2.79,2.79,0,0,1-.82.94,2.71,2.71,0,0,1-1.49.35,4.77,4.77,0,0,1-1.54-.28l-1-.4a1,1,0,0,0-1.32.59l-1.29,3.5a1,1,0,0,0,.48,1.19,18.65,18.65,0,0,0,2.11.89,11.76,11.76,0,0,0,3.5.47,9.65,9.65,0,0,0,2.84-.38,5.94,5.94,0,0,0,2.2-1.23,9.09,9.09,0,0,0,1.77-2.2A19.65,19.65,0,0,0,134,41.91l9.47-25.24A.53.53,0,0,0,143,16ZM90.89,35.52c-3.24.28-6.14-2.6-6.48-6.45s2-7.19,5.26-7.47,6.14,2.6,6.48,6.45S94.13,35.24,90.89,35.52Z"></path></g></svg>
+                </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Discover
+                        </a>
+                        <div class="dropdown-menu">
+                            <a asp-area="" asp-controller="Discover" asp-action="Index" class="dropdown-item">Lessons</a>
+                            <a asp-area="" asp-controller="Instructors" asp-action="Index" class="dropdown-item">Instructors</a>
+                            <a asp-area="" asp-controller="Courses" asp-action="Index" class="dropdown-item">Courses</a>
+                            <div class="dropdown-divider"></div>
+                            <a asp-area="" asp-controller="SignUp" asp-action="Index" class="dropdown-item">Sign up today</a>
+                            <a asp-area="" asp-controller="SignUp" asp-action="Index" class="dropdown-item">Subscriptions</a>
+                            <div class="dropdown-divider"></div>
+                            <a asp-area="" asp-controller="Content" asp-action="Integrations" class="dropdown-item">Integrations</a>
+                            <a asp-area="" asp-controller="Content" asp-action="CustomContent" class="dropdown-item">Custom Content</a>
+                            <a asp-area="" asp-controller="Home" asp-action="Newsletter" class="dropdown-item">Newsletter</a>
+                            <div class="dropdown-divider"></div>
+                            <a asp-area="" asp-controller="Content" asp-action="HubSpot" class="dropdown-item">HubSpot Test</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Individuals<span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Business
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Single Venue</a>
+                            <a class="dropdown-item" href="#">Multi Venue</a>
+                            <a class="dropdown-item" href="#">Corporate</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Academic</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            About
+                        </a>
+                        <div class="dropdown-menu">
+                            <a asp-area="" asp-controller="Content" asp-action="Who" class="dropdown-item">Who we are</a>
+                            <a asp-area="" asp-controller="Content" asp-action="Where" class="dropdown-item">Where we are</a>
+                            <a asp-area="" asp-controller="Content" asp-action="Team" class="dropdown-item">Meet the Team</a>
+                            <a asp-area="" asp-controller="Home" asp-action="Contact" class="dropdown-item">Contact Us</a>
+                            <div class="dropdown-divider"></div>
+                            <a asp-area="" asp-controller="Content" asp-action="Pages" class="dropdown-item">Pages</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav mr-3">
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle search-outline-light" href="#" id="navbardrop" data-toggle="dropdown">
+                            <i class="fas fa-search"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right mt-1" style="min-width:25rem;">
+                            <li class="p-2">
+                                <div class="form-group">
+                                    @*<input class="form-control" id="searchNavBar" list="searchNavBarContent" autocomplete="off" type="search" placeholder="Search by topic or skill" aria-label="Search">
+                                        <datalist id="searchNavBarContent"></datalist>*@
+                                    @(Html.DevExtreme().Autocomplete()
+                                        .ID("searchBarInput")
+                                        .DataSource(d => d.Mvc().LoadAction("GetCoursesAndVideos").Controller("Search"))
+                                        .ValueExpr("Name")
+                                        .Placeholder("Search Courses and Lessons...")
+                                        .SearchTimeout(0)
+                                        .Height(50)
+                                        .ShowClearButton(true)
+                                        .FocusStateEnabled(true)
+                                        .OnFocusIn(@<text>function(e) {
+                                            e.component.open();
+                                            }</text>)
+                                                    .ItemTemplate(@<text>
+                                                        <div style="font-size: 1rem;">
+                                                            <%= Name %>
+                                                        </div>
+                                                    </text> )
+                                                                .OnItemClick("searchbar_changed"))
+                                </div>
+                                <div class="form-group mb-1 ">
+                                    @*<button class="btn btn-typsy-blue my-2 my-sm-0 mr-3" type="submit" id="btn-search-navbar">Advanced</button>*@
+                                    <a class="btn btn-typsy-blue my-2 my-sm-0 mr-3" asp-controller="Search" asp-action="Index">Advanced</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav mr-2">
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle btn btn-outline-light" href="#" id="navbardrop" data-toggle="dropdown">
+                            Login
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a href="@Settings.TypsyIndividualWebSiteUrl" class="dropdown-item" target="_blank">Member</a>
+                            <a href="@Settings.TypsyManagerWebSiteUrl" class="dropdown-item" target="_blank">Manager</a>
+                            <div class="dropdown-divider"></div>
+                            <a asp-area="" asp-controller="SignUp" asp-action="Index" class="dropdown-item">Sign Up</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main role="main">
+        @RenderBody()
+    </main>
+
+
+    <footer class="content-info">
+        <div class="footer-container">
+            <!-- <button class="ft-menu-toggle" type="button" data-toggle="collapse" data-target="#togglemenu" aria-expanded="false" aria-controls="togglemenu">MENU
+              <svg fill="white" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 14 14" class="nav__chevron___13gWw"
+                style="vertical-align: middle;">
+                <g>
+                  <polygon class="cls-1" points="13.79 4.17 12.66 3.04 7 8.7 1.34 3.04 0.21 4.17 5.87 9.83 5.87 9.83 7 10.96 8.13 9.83 8.13 9.83 13.79 4.17"></polygon>
+                </g>
+              </svg>
+            </button> -->
+            <div class="ft-links menu-collapsed" id="togglemenu">
+                <div class="row">
+                    <div class="col-xs-4 col-md-3">
+                        <h3 class="ft-nav-heading">Welcome</h3>
+                        <ul class="ft-nav">
+                            <li>
+                                <a href="/individuals/">Individuals</a>
+                            </li>
+                            <li>
+                                <a href="/business/">Single Venue</a>
+                            </li>
+                            <li>
+                                <a href="/business/multi-venue">Multi Venue</a>
+                            </li>
+                            <li>
+                                <a href="/business/corporate">Corporate</a>
+                            </li>
+                            <li>
+                                <a href="/academics/">Academic</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4 col-md-3">
+                        <h3 class="ft-nav-heading">Learning</h3>
+                        <ul class="ft-nav">
+                            <li>
+                                <a href="/discover/?type=lessons">Lessons</a>
+                            </li>
+                            <li>
+                                <a href="/discover/?type=courses">Courses</a>
+                            </li>
+                            <li>
+                                <a href="/discover/?category=mentor sessions">Mentor Sessions</a>
+                            </li>
+                            <li>
+                                <a href="/instructors/">Instructors</a>
+                            </li>
+                            <li>
+                                <a href="/custom-content/">Custom Content</a>
+                            </li>
+                            <li>
+                                <a href="/integrations/">Integrations</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4 col-md-3">
+                        <h3 class="ft-nav-heading">Typsy</h3>
+                        <ul class="ft-nav">
+                            <li>
+                                <a href="/contact-us/">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="/ambassadors/">Ambassadors</a>
+                            </li>
+                            <li>
+                                <a href="/partners/">Partnerships</a>
+                            </li>
+                            <li>
+                                <a href="http://blog.typsy.com">Blog</a>
+                            </li>
+                            <li>
+                                <a href="http://info.typsy.com/typsy-newsletters">Newsletter</a>
+                            </li>
+                            <li>
+                                <a href="/events/">Events</a>
+                            </li>
+                            <li id="refer-a-friend-footer">
+                                <a href="#" data-mbsy-integration="3525">Refer a Friend</a>
+                            </li>
+                            <li>
+                                <a href="/competition/">Competition</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                        <h3 class="ft-nav-heading">Download the app</h3>
+                        <a class="play-store" href="https://play.google.com/store/apps/details?id=com.typsy.app">Download on Google play store</a>
+                        <a class="ios-store" href="https://itunes.apple.com/us/app/typsy/id1094052825?mt=8">iOS Store</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ft-copy">
+                <div class="row">
+                    <div class="col-sm-2 col-md-2">
+                        <a class="ft-brand" href="/">Typsy</a>
+                    </div>
+                    <div class="col-sm-6 col-md-7 text-center">
+                        <ul class="ft-btm-links">
+                            <li>
+                                <a asp-controller="Content" asp-action="PrivacyPolicy">Privacy</a>
+                            </li>
+                            <li>
+                                <a asp-controller="Content" asp-action="Term">Terms</a>
+                            </li>
+                            <li>
+                                Copyright Typsy&nbsp;2018. &nbsp; All rights reserved
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 text-lg-right">
+                        <div class="social__social___2CweB">
+                            <ul>
+                                <li>
+                                    <a href="http://www.twitter.com/asktypsy" target="_blank">
+                                        <svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 20 20" class="social__icon___2V45V"
+                                             style="vertical-align: middle;">
+                                            <g>
+                                                <title>twitter</title>
+                                                <path class="cls-1" d="M20,3.73a8.17,8.17,0,0,1-2.36.65,4.16,4.16,0,0,0,1.81-2.3,8.2,8.2,0,0,1-2.61,1,4.09,4.09,0,0,0-3-1.31,4.14,4.14,0,0,0-4,5.1A11.64,11.64,0,0,1,1.37,2.54,4.18,4.18,0,0,0,2.65,8.08,4.06,4.06,0,0,1,.78,7.56a4.15,4.15,0,0,0,3.3,4.12,4.07,4.07,0,0,1-1.86.07,4.12,4.12,0,0,0,3.84,2.88A8.21,8.21,0,0,1,0,16.36a11.57,11.57,0,0,0,6.3,1.86A11.7,11.7,0,0,0,18,5.87,8.4,8.4,0,0,0,20,3.73Z"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.instagram.com/asktypsy" target="_blank">
+                                        <svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 20 20" class="social__icon___2V45V"
+                                             style="vertical-align: middle;">
+                                            <g>
+                                                <path class="cls-1" d="M18.63,6.47a6.19,6.19,0,0,0-.4-2.08,4.18,4.18,0,0,0-1-1.51,4.26,4.26,0,0,0-1.54-1,6.46,6.46,0,0,0-2.11-.4c-.93,0-1.22-.05-3.58-.05s-2.65,0-3.58.05a6.46,6.46,0,0,0-2.11.4,4.26,4.26,0,0,0-1.54,1,4.18,4.18,0,0,0-1,1.51,6.19,6.19,0,0,0-.4,2.08c0,.91-.05,1.2-.05,3.53s0,2.61.05,3.53a6.19,6.19,0,0,0,.4,2.08,4.19,4.19,0,0,0,1,1.51,4.26,4.26,0,0,0,1.54,1,6.46,6.46,0,0,0,2.11.4c.93,0,1.22.05,3.58.05s2.65,0,3.58-.05a6.46,6.46,0,0,0,2.11-.4,4.26,4.26,0,0,0,1.54-1,4.19,4.19,0,0,0,1-1.51,6.19,6.19,0,0,0,.4-2.08c0-.91.05-1.2.05-3.53S18.67,7.39,18.63,6.47Zm-1.56,7a4.67,4.67,0,0,1-.3,1.59,2.64,2.64,0,0,1-.65,1,2.69,2.69,0,0,1-1,.64,4.88,4.88,0,0,1-1.61.29c-.92,0-1.19.05-3.51.05S7.41,17,6.49,17a4.88,4.88,0,0,1-1.61-.29,2.69,2.69,0,0,1-1-.64,2.64,2.64,0,0,1-.65-1,4.67,4.67,0,0,1-.3-1.59c0-.9-.05-1.17-.05-3.45s0-2.55.05-3.46A4.67,4.67,0,0,1,3.23,5a2.64,2.64,0,0,1,.65-1,2.7,2.7,0,0,1,1-.64A4.88,4.88,0,0,1,6.49,3C7.41,3,7.68,3,10,3s2.59,0,3.51.05a4.88,4.88,0,0,1,1.61.29,2.7,2.7,0,0,1,1,.64,2.64,2.64,0,0,1,.65,1,4.67,4.67,0,0,1,.3,1.59c0,.9.05,1.17.05,3.46S17.11,12.55,17.07,13.45ZM10,5.61A4.39,4.39,0,1,0,14.46,10,4.42,4.42,0,0,0,10,5.61Zm0,7.24A2.85,2.85,0,1,1,12.89,10,2.87,2.87,0,0,1,10,12.85Zm4.64-8.44a1,1,0,1,0,1,1A1,1,0,0,0,14.64,4.41Z"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.facebook.com/asktypsy" target="_blank">
+                                        <svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 20 20" class="social__icon___2V45V"
+                                             style="vertical-align: middle;">
+                                            <g>
+                                                <title>facebook</title>
+                                                <path class="cls-1" d="M7.81,7.15H6V10H7.81v8.26h3.5V9.93h2.44L14,7.15h-2.7V5.57c0-.65.14-.91.81-.91H14V1.78H11.59C9,1.78,7.81,2.86,7.81,4.94Z"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://snapchat.com/add/asktypsy" target="_blank">
+                                        <svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 18.7 17.1" class="social__icon___2V45V"
+                                             style="vertical-align: middle;">
+                                            <g>
+                                                <title>snapchat</title>
+                                                <path class="cls-1" d="M10.12,18.55H9.88a4.22,4.22,0,0,1-2.52-1,3.67,3.67,0,0,0-1.44-.71,4.75,4.75,0,0,0-.76-.06,5.32,5.32,0,0,0-1,.12,2.38,2.38,0,0,1-.4.06.27.27,0,0,1-.3-.21c0-.15-.08-.29-.11-.42-.08-.34-.13-.55-.26-.57-1.4-.21-2.22-.52-2.39-.89a.34.34,0,0,1,0-.12.22.22,0,0,1,.19-.23,4.91,4.91,0,0,0,2.93-1.7,6.36,6.36,0,0,0,1-1.51h0a1,1,0,0,0,.1-.82c-.18-.41-.78-.6-1.17-.72L3.43,9.7c-.35-.13-.92-.42-.85-.81a.78.78,0,0,1,.76-.48.55.55,0,0,1,.23,0,2.34,2.34,0,0,0,.95.24.81.81,0,0,0,.55-.16q0-.27,0-.54a9,9,0,0,1,.23-3.67A4.92,4.92,0,0,1,9.81,1.45h.38a4.93,4.93,0,0,1,4.56,2.86A9,9,0,0,1,15,8V8c0,.17,0,.33,0,.48a.78.78,0,0,0,.5.16,2.42,2.42,0,0,0,.89-.24.73.73,0,0,1,.29-.06.89.89,0,0,1,.33.06h0a.61.61,0,0,1,.47.49c0,.19-.14.47-.85.75l-.26.09c-.39.12-1,.31-1.17.72a1,1,0,0,0,.1.82h0a5.72,5.72,0,0,0,3.93,3.21.22.22,0,0,1,.19.23.35.35,0,0,1,0,.12c-.16.37-1,.68-2.39.89-.13,0-.19.23-.26.56,0,.14-.06.28-.11.42a.26.26,0,0,1-.28.2h0a2.3,2.3,0,0,1-.4,0,5.32,5.32,0,0,0-1-.11,4.81,4.81,0,0,0-.76.06,3.67,3.67,0,0,0-1.43.71,4.22,4.22,0,0,1-2.52,1"
+                                                      transform="translate(-0.65 -1.45)"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/company/7953302/" target="_blank">
+                                        <svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 26 26" class="social__icon___2V45V"
+                                             style="vertical-align: middle;">
+                                            <g>
+                                                <title>LinkedIn</title>
+                                                <path class="cls-1" d="M6.35,3.2A3.17,3.17,0,1,1,3.17,0,3.19,3.19,0,0,1,6.35,3.2ZM5.88,8.67H.52V26H5.88Zm8.58,0H9.32V26h5.15V16.9c0-2.44,1.12-3.89,3.27-3.89,2,0,2.92,1.39,2.92,3.89V26H26V15c0-4.64-2.63-6.89-6.31-6.89A6,6,0,0,0,14.46,11V8.67Z"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FOOTER -->
+    @*<div class="container-fluid mt-5" style="position:absolute;bottom:0;">*@
+    @* <footer class="container mt-3 pt-5 pb-3">
+            <p class="float-right"><a href="#">Back to top</a></p>
+            <p class="text-muted">@DateTime.UtcNow.Year Typsy &middot; <a asp-controller="Content" asp-action="PrivacyPolicy">Privacy</a> &middot; <a asp-controller="Content" asp-action="Term">Terms</a> &middot; <a asp-controller="Search" asp-action="Index">Search</a></p>
+            <p class="text-muted">@Settings.BuildNumber - @Settings.SourceBranchName</p>
+        </footer>*@
+    @*</div>*@
+
+    <script>
+        @*$("#searchNavBar").click(function () {
+            var _this = $(this);
+            var value = _this.val();
+            $.ajax({
+                url: "/api/content",
+                //data: { search: value.length > 0 ? value + "*" : "" },
+                success: function (content) {
+                    $("#searchNavBarContent").empty();
+                    for (var i in content) {
+                        $("<option data-type='' id='' />").html(content[i].Name).attr({ 'data-type': content[i].Type }).attr({ 'id': content[i].Slug }).attr({ 'value': content[i].Name }).appendTo("#searchNavBarContent");
+                    }
+                    _this.focus();
+                }
+            })
+        });
+
+        $("#searchNavBar").focus();
+
+        $(document).keyup(function (e) {
+            if ($("#searchNavBar").is(":focus") && (e.keyCode == 13)) {
+                navBarNavigateToSearchContentUrl();
+            }
+        });
+
+        $("#btn-search-navbar").click(function () {
+            navBarNavigateToSearchContentUrl();
+        });
+
+        function navBarNavigateToSearchContentUrl() {
+            var search = $('#searchNavBar').val();
+            var item = $("#searchNavBarContent").find("option[value='" + search + "']");
+
+            if (item.attr("data-type") === "video")
+                window.location = "/lessons/" + item.attr("id");
+            else if (item.attr("data-type") === "course")
+                window.location = "/courses/" + item.attr("id");
+        }*@
+
+        function searchbar_changed(data) {
+            var search = data.itemData.Slug;
+
+            if (data.itemData.Type === "video")
+                window.location = "/lessons/" + data.itemData.Slug;
+            else if (data.itemData.Type === "course")
+                window.location = "/courses/" + data.itemData.Slug;
+        }
+
+    </script>
+
+    @RenderSection("Scripts", required: false)
+    @*<script src="https://my.hellobar.com/f815639817551442658522baa79130c7a4d286f8.js" type="text/javascript" charset="utf-8" async="async"></script>*@
+</body>
+</html>
+
+<style>
+    .dx-autocomplete .dx-texteditor-input {
+        font-size: 1.5em;
+    }
+</style>
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="first-slide" src="@Constants.URI_BLOB_STORAGE/images/banner/sign_up_as_an_individual__typsy_online_hospitality_courses__3200x1014.jpg" alt="First slide">
+                <div class="container">
+                    <div class="carousel-caption text-left">
+                        <h1>Skill up. Online hospitality courses from the world’s best instructors.</h1>
+                        <p class="carousel-text">Typsy believes that hospitality makes the world better by making every hospitality moment count. Choose from our video library or upload your own videos.</p>
+                        <p><a asp-area="" asp-controller="SignUp" asp-action="Index" class="btn btn-lg btn-typsy" role="button">Sign up today</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="second-slide" src="@Constants.URI_BLOB_STORAGE/images/banner/about_us_hero_banner_1_2400x761.jpg" alt="Second slide">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Typsy believes that hospitality makes the world better by making every hospitality moment count.</h1>
+                        <p class="carousel-text">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <p><a asp-area="" asp-controller="SignUp" asp-action="Index" class="btn btn-lg btn-typsy" role="button">Sign up today</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="third-slide" src="@Constants.URI_BLOB_STORAGE/images/banner/academic_banner-crop_2848x1014.jpg" alt="Third slide">
+                <div class="container">
+                    <div class="carousel-caption text-left">
+                        <h1>Expert hospitality training. Simply taught. Easily scheduled.</h1>
+                        <p class="carousel-text">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <p><a asp-area="" asp-controller="SignUp" asp-action="Index" class="btn btn-lg btn-typsy" role="button">Sign up today</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    
+    
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+    
+    <div class="container-fluid marketing">
+        <div class="container">
+            <!-- Three columns of text below the carousel -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <img class="rounded-circle" src="@Constants.URI_BLOB_STORAGE/images/instructors/Sebastian_Priller_Typsy_instructor_245x245.png" alt="Generic placeholder image" width="140" height="140">
+                    <h2>Individiuals</h2>
+                    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                    <p><a class="btn btn-typsy-blue" href="#" role="button">View details &raquo;</a></p>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <img class="rounded-circle" src="@Constants.URI_BLOB_STORAGE/images/instructors/JJ_Goodman_Typsy_instructor_245x245.png" alt="Generic placeholder image" width="140" height="140">
+                    <h2>Businesses</h2>
+                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+                    <p><a class="btn btn-typsy-blue" href="#" role="button">View details &raquo;</a></p>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <img class="rounded-circle" src="@Constants.URI_BLOB_STORAGE/images/instructors/Glenn_Flood_Typsy_instructor_245x245.jpg" alt="Generic placeholder image" width="140" height="140">
+                    <h2>Academics</h2>
+                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <p><a class="btn btn-typsy-blue" href="#" role="button">View details &raquo;</a></p>
+                </div><!-- /.col-lg-4 -->
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid bg-typsy-teal" style="padding-left:0px;padding-right:0px;">
+        <div class="container pt-5 pb-5">
+            <div class="row">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">Value Proposition One. <span class="text-muted">It'll blow your mind.</span></h2>
+                    <p class="lead">
+                        Typsy makes training easy. We specialise in providing online video training from the world's best hospitality instructors. For hospitality businesses, staff and schools, we have over 300 short skills training videos that are perfect for today's hospitality training needs. We cater to Front of House, Back of House and Management in categories including culinary, beverage, service, marketing, management and business.
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img class="featurette-image img-fluid mx-auto" src="@Constants.URI_BLOB_STORAGE/images/instructors/Sebastian_Priller_Typsy_instructor_245x245.png" alt="Generic placeholder image">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid bg-typsy-grey2" style="padding-left:0px;padding-right:0px;">
+        <div class="container pt-5 pb-5">
+            <div class="row">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+                    <p class="lead">In a fast-paced world in which human connections are increasingly fleeting, Typsy believes that hospitality moments make the world a better place. We want to empower you with access to insider tips and knowledge so you and your teams can skill up, serve the world better and make every hospitality moment exceptional. Have fun completing quizzes and earning certificates.</p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <img class="featurette-image img-fluid mx-auto" src="@Constants.URI_BLOB_STORAGE/images/instructors/JJ_Goodman_Typsy_instructor_245x245.png" alt="Generic placeholder image">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid bg-typsy-red" style="padding-left:0px;padding-right:0px;color:white;">
+        <div class="container pt-5 pb-5">
+            <div class="row">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">And lastly, this one. Checkmate.</h2>
+                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="featurette-image img-fluid mx-auto" src="@Constants.URI_BLOB_STORAGE/images/instructors/Glenn_Flood_Typsy_instructor_245x245.jpg" alt="Generic placeholder image">
+                </div>
+            </div>
+        </div>
+    </div>
